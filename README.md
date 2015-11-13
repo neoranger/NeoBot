@@ -1,6 +1,6 @@
-proyecto1
+NeoBot
 =========
 
-Prueba de repositorio para proyecto1
+Telegram Bot just for fun. You can add the bot @RootAdminBot for test.
 
-Para todos aquellos que quieran participar del proyecto, pueden comunicarse conmigo al siguiente mail: nag.garrido@gmail.com
+You can contact me: neoranger@openmailbox.org
