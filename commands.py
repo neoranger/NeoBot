@@ -48,8 +48,8 @@ def command_acerca(m): # Definimos una función que resuleva lo que necesitemos.
 @bot.message_handler(commands=['help']) # Indicamos que lo siguiente va a controlar el comando.
 def command_ayuda(m): # Definimos una función que resuleva lo que necesitemos.
     cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_message( cid, 'Comandos Disponibles: /hola /hello /kick /uppercut /hadouken /windowsero /nsa /attack /roll /time /acerca /help') # Con la función 'send_message()' del bot, enviamos al ID almacenado el texto que queremos.
-    
+    bot.send_message( cid, 'Comandos Disponibles: /hola /hello /kick /uppercut /hadouken /windowsero /nsa /attack /gentoo /roll /time /blogroll /acerca /help') #
+ 
 @bot.message_handler(commands=['hola']) # Indicamos que lo siguiente va a controlar el comando.
 def command_hola(m): # Definimos una función que resuleva lo que necesitemos.
     cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
@@ -74,11 +74,22 @@ def command_nsa(m): # Definimos una función que resuelva lo que necesitemos.
 def command_roll(m): # Definimos una función que resuleva lo que necesitemos.
     cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
     bot.send_message( cid, random.randint(1,6) ) # Con la función 'send_message()' del bot, enviamos al ID almacenado el texto que queremos.        
-
 @bot.message_handler(commands=['time']) # Indicamos que lo siguiente va a controlar el comando.
 def command_time(m): # Definimos una función que resuleva lo que necesitemos.
     cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
     bot.send_message( cid, str(datetime.datetime.now())) # Con la función 'send_message()' del bot, enviamos al ID almacenado el texto que queremos.        
+
+@bot.message_handler(commands=['blogroll']) # Indicamos que lo siguiente va a controlar el comando.
+def command_blogroll(m): # Definimos una función que resuleva lo que necesitemos.
+    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
+    bot.send_message( cid, 'BlogRoll: https://pad.riseup.net/p/blogroll') # Con la función 'send_message()' del bot, enviamos al ID almacenado el texto que queremos.
+ 
+@bot.message_handler(commands=['gentoo']) # Indicamos que lo siguiente va a controlar el comando.
+def command_gentoo(m): # Definimos una función que resuelva lo que necesitemos.
+    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
+    bot.send_photo( cid, open( 'gentoo.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+
+
 
 #############################################
 #Peticiones
