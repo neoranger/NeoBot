@@ -48,7 +48,7 @@ def command_acerca(m): # Definimos una función que resuleva lo que necesitemos.
 @bot.message_handler(commands=['help']) # Indicamos que lo siguiente va a controlar el comando.
 def command_ayuda(m): # Definimos una función que resuleva lo que necesitemos.
     cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_message( cid, 'Comandos Disponibles: /hola /hello /kick /uppercut /hadouken /windowsero /nsa /attack /gentoo /roll /time /blogroll /acerca /help') #
+    bot.send_message( cid, "Comandos Disponibles: /hola /hello /kick /uppercut /hadouken /windowsero /nsa /attack /gentoo /flame /vicman /deletethat /roll /time /blogroll /tuxamigos /acerca /help") #
  
 @bot.message_handler(commands=['hola']) # Indicamos que lo siguiente va a controlar el comando.
 def command_hola(m): # Definimos una función que resuleva lo que necesitemos.
@@ -68,7 +68,7 @@ def command_attack(m): # Definimos una función que resuelva lo que necesitemos.
 @bot.message_handler(commands=['nsa']) # Indicamos que lo siguiente va a controlar el comando.
 def command_nsa(m): # Definimos una función que resuelva lo que necesitemos.
     cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'gitlab_fox.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+    bot.send_photo( cid, open( 'tiosam.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
 
 @bot.message_handler(commands=['roll']) # Indicamos que lo siguiente va a controlar el comando.
 def command_roll(m): # Definimos una función que resuleva lo que necesitemos.
@@ -88,6 +88,28 @@ def command_blogroll(m): # Definimos una función que resuleva lo que necesitemo
 def command_gentoo(m): # Definimos una función que resuelva lo que necesitemos.
     cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
     bot.send_photo( cid, open( 'gentoo.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+
+
+@bot.message_handler(commands=['vicman']) # Indicamos que lo siguiente va a controlar el comando.
+def command_vicman(m): # Definimos una función que resuelva lo que necesitemos.
+    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
+    bot.send_photo( cid, open( 'vicman.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+
+@bot.message_handler(commands=['tuxamigos']) # Indicamos que lo siguiente va a controlar el comando.
+def command_tuxamigos(m): # Definimos una función que resuelva lo que necesitemos.
+    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
+    bot.send_photo( cid, open( 'chanbalam.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+
+@bot.message_handler(commands=['deletethat']) # Indicamos que lo siguiente va a controlar el comando.
+def command_deletethat(m): # Definimos una función que resuelva lo que necesitemos.
+    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
+    bot.send_photo( cid, open( 'deletethat.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+
+@bot.message_handler(commands=['flame']) # Indicamos que lo siguiente va a controlar el comando.
+def command_flame(m): # Definimos una función que resuelva lo que necesitemos.
+    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
+    bot.send_photo( cid, open( 'popcorn.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+
 
 
 
