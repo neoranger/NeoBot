@@ -6,7 +6,9 @@ import time # Librería para hacer que el programa que controla el bot no se aca
 import random
 import datetime
  
-TOKEN = '155191473:AAHCYuF--V7dg2TOdmOkz1dL8ibrgM4wMJU' # Nuestro tokken del bot (el que @BotFather nos dió).
+TOKEN = 'Here's the token' # Nuestro tokken del bot (el que @BotFather 
+nos 
+dió).
  
 bot = telebot.TeleBot(TOKEN) # Creamos el objeto de nuestro bot.
 #############################################
