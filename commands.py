@@ -6,7 +6,7 @@ import time # Librería para hacer que el programa que controla el bot no se aca
 import random
 import datetime
  
-TOKEN = 'ACA VA EL TOKEN' # Nuestro tokken del bot (el que @BotFather nos dió).
+TOKEN = '155191473:AAHCYuF--V7dg2TOdmOkz1dL8ibrgM4wMJU' # Nuestro tokken del bot (el que @BotFather nos dió).
  
 bot = telebot.TeleBot(TOKEN) # Creamos el objeto de nuestro bot.
 #############################################
@@ -48,7 +48,7 @@ def command_acerca(m): # Definimos una función que resuleva lo que necesitemos.
 @bot.message_handler(commands=['help']) # Indicamos que lo siguiente va a controlar el comando.
 def command_ayuda(m): # Definimos una función que resuleva lo que necesitemos.
     cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_message( cid, "Comandos Disponibles: /hola /hello /kick /uppercut /hadouken /windowsero /nsa /attack /gentoo /flame /vicman /deletethat /roll /time /blogroll /tuxamigos /acerca /help") #
+    bot.send_message( cid, "Comandos Disponibles: /hola /hello /kick /uppercut /hadouken /windowsero /stallman /ok /nsa /attack /gentoo /flame /vicman /deletethat /coding /roll /time /blogroll /tuxamigos /acerca /help") #
  
 @bot.message_handler(commands=['hola']) # Indicamos que lo siguiente va a controlar el comando.
 def command_hola(m): # Definimos una función que resuleva lo que necesitemos.
@@ -110,9 +110,24 @@ def command_flame(m): # Definimos una función que resuelva lo que necesitemos.
     cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
     bot.send_photo( cid, open( 'popcorn.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
 
+@bot.message_handler(commands=['stallman']) # Indicamos que lo siguiente va a controlar el comando.
+def command_stallman(m): # Definimos una función que resuelva lo que necesitemos.
+    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
+    bot.send_photo( cid, open( 'dancingstallman.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+ 
+@bot.message_handler(commands=['ok']) # Indicamos que lo siguiente va a controlar el comando.
+def command_ok(m): # Definimos una función que resuelva lo que necesitemos.
+    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
+    bot.send_photo( cid, open( 'ok.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+
+@bot.message_handler(commands=['coding']) # Indicamos que lo siguiente va a controlar el comando.
+def command_coding(m): # Definimos una función que resuelva lo que necesitemos.
+    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
+    bot.send_photo( cid, open( 'coding.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+ 
 
 
-
+ 
 #############################################
 #Peticiones
 bot.polling(none_stop=True) # Con esto, le decimos al bot que siga funcionando incluso si encuentra algun fallo.
