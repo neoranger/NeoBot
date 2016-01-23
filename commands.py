@@ -26,139 +26,136 @@ def command_kick(m): # Definimos una función que resuelva lo que necesitemos.
     cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
     bot.send_photo( cid, open( 'kick.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
 
-@bot.message_handler(commands=['uppercut']) # Indicamos que lo siguiente va a controlar el comando.
-def command_uppercut(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'uppercut.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+@bot.message_handler(commands=['uppercut'])
+def command_uppercut(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'uppercut.jpg', 'rb')) 
  
-@bot.message_handler(commands=['hadouken']) # Indicamos que lo siguiente va a controlar el comando.
-def command_hadouken(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'hadouken.gif', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+@bot.message_handler(commands=['hadouken']) 
+def command_hadouken(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'hadouken.gif', 'rb')) 
     
-@bot.message_handler(commands=['windowsero']) # Indicamos que lo siguiente va a controlar el comando.
-def command_windowsero(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'windowsero.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+@bot.message_handler(commands=['windowsero']) 
+def command_windowsero(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'windowsero.jpg', 'rb'))
     
-@bot.message_handler(commands=['acerca']) # Indicamos que lo siguiente va a controlar el comando.
-def command_acerca(m): # Definimos una función que resuleva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_message( cid, 'Acerca de @RootAdminBot: Creado por NeoRanger - www.neositelinux.com.ar') # Con la función 'send_message()' del bot, enviamos al ID almacenado el texto que queremos.
+@bot.message_handler(commands=['acerca']) 
+def command_acerca(m):
+    cid = m.chat.id 
+    bot.send_message( cid, 'Acerca de @RootAdminBot: Creado por NeoRanger - www.neositelinux.com.ar') 
     
-@bot.message_handler(commands=['help']) # Indicamos que lo siguiente va a controlar el comando.
-def command_ayuda(m): # Definimos una función que resuleva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
+@bot.message_handler(commands=['help']) 
+def command_ayuda(m): 
+    cid = m.chat.id 
     bot.send_message( cid, "Comandos Disponibles: /hola /hello /kick /uppercut /hadouken /windowsero /stallman /ok /yes /nsa /attack /gentoo /kde /flame /vicman /deletethat /coding /nelson /spoiler /quetefo /viernes /roll /time /blogroll /tuxamigos /acerca /help") #
  
-@bot.message_handler(commands=['hola']) # Indicamos que lo siguiente va a controlar el comando.
-def command_hola(m): # Definimos una función que resuleva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_message( cid, 'Hola, bienvenido!') # Con la función 'send_message()' del bot, enviamos al ID almacenado el texto que queremos.    
+@bot.message_handler(commands=['hola']) 
+def command_hola(m): 
+    cid = m.chat.id 
+    bot.send_message( cid, 'Hola, bienvenido!') 
 
-@bot.message_handler(commands=['hello']) # Indicamos que lo siguiente va a controlar el comando.
-def command_hello(m): # Definimos una función que resuleva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_message( cid, 'Hello and welcome!') # Con la función 'send_message()' del bot, enviamos al ID almacenado el texto que queremos.        
+@bot.message_handler(commands=['hello']) 
+def command_hello(m): 
+    cid = m.chat.id 
+    bot.send_message( cid, 'Hello and welcome!') 
 
-@bot.message_handler(commands=['attack']) # Indicamos que lo siguiente va a controlar el comando.
-def command_attack(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'dictionary_attack.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+@bot.message_handler(commands=['attack']) 
+def command_attack(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'dictionary_attack.jpg', 'rb')) 
 
-@bot.message_handler(commands=['nsa']) # Indicamos que lo siguiente va a controlar el comando.
-def command_nsa(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'tiosam.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+@bot.message_handler(commands=['nsa']) 
+def command_nsa(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'tiosam.jpg', 'rb'))
 
-@bot.message_handler(commands=['roll']) # Indicamos que lo siguiente va a controlar el comando.
-def command_roll(m): # Definimos una función que resuleva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_message( cid, random.randint(1,6) ) # Con la función 'send_message()' del bot, enviamos al ID almacenado el texto que queremos.        
-@bot.message_handler(commands=['time']) # Indicamos que lo siguiente va a controlar el comando.
-def command_time(m): # Definimos una función que resuleva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_message( cid, str(datetime.datetime.now())) # Con la función 'send_message()' del bot, enviamos al ID almacenado el texto que queremos.        
+@bot.message_handler(commands=['roll']) 
+def command_roll(m): 
+    cid = m.chat.id 
+    bot.send_message( cid, random.randint(1,6) )
+@bot.message_handler(commands=['time'])
+def command_time(m): 
+    cid = m.chat.id 
+    bot.send_message( cid, str(datetime.datetime.now())) 
 
-@bot.message_handler(commands=['blogroll']) # Indicamos que lo siguiente va a controlar el comando.
-def command_blogroll(m): # Definimos una función que resuleva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_message( cid, 'BlogRoll: https://pad.riseup.net/p/blogroll') # Con la función 'send_message()' del bot, enviamos al ID almacenado el texto que queremos.
+@bot.message_handler(commands=['blogroll']) 
+def command_blogroll(m): 
+    cid = m.chat.id 
+    bot.send_message( cid, 'BlogRoll: https://pad.riseup.net/p/blogroll') 
  
-@bot.message_handler(commands=['gentoo']) # Indicamos que lo siguiente va a controlar el comando.
-def command_gentoo(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'gentoo.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+@bot.message_handler(commands=['gentoo']) 
+def command_gentoo(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'gentoo.jpg', 'rb')) 
 
 
-@bot.message_handler(commands=['vicman']) # Indicamos que lo siguiente va a controlar el comando.
-def command_vicman(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'vicman2.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+@bot.message_handler(commands=['vicman']) 
+def command_vicman(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'vicman2.jpg', 'rb')) 
 
-@bot.message_handler(commands=['tuxamigos']) # Indicamos que lo siguiente va a controlar el comando.
-def command_tuxamigos(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'tuxamigos.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+@bot.message_handler(commands=['tuxamigos']) 
+def command_tuxamigos(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'tuxamigos.jpg', 'rb')) 
+    
+@bot.message_handler(commands=['deletethat']) 
+def command_deletethat(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'deletethat.jpg', 'rb')) 
 
-@bot.message_handler(commands=['deletethat']) # Indicamos que lo siguiente va a controlar el comando.
-def command_deletethat(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'deletethat.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+@bot.message_handler(commands=['flame']) 
+def command_flame(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'popcorn.jpg', 'rb')) 
 
-@bot.message_handler(commands=['flame']) # Indicamos que lo siguiente va a controlar el comando.
-def command_flame(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'popcorn.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
-
-@bot.message_handler(commands=['stallman']) # Indicamos que lo siguiente va a controlar el comando.
-def command_stallman(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'dancingstallman.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+@bot.message_handler(commands=['stallman']) 
+def command_stallman(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'dancingstallman.jpg', 'rb')) 
  
-@bot.message_handler(commands=['ok']) # Indicamos que lo siguiente va a controlar el comando.
-def command_ok(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'ok.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+@bot.message_handler(commands=['ok']) 
+def command_ok(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'ok.jpg', 'rb')) 
 
-@bot.message_handler(commands=['coding']) # Indicamos que lo siguiente va a controlar el comando.
-def command_coding(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'coding.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+@bot.message_handler(commands=['coding']) 
+def command_coding(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'coding.jpg', 'rb')) 
  
-@bot.message_handler(commands=['nelson']) # Indicamos que lo siguiente va a controlar el comando.
-def command_nelson(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'nelson.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+@bot.message_handler(commands=['nelson']) 
+def command_nelson(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'nelson.jpg', 'rb')) 
  
-@bot.message_handler(commands=['yes']) # Indicamos que lo siguiente va a controlar el comando.
-def command_fuckyeah(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'fuckyeah.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+@bot.message_handler(commands=['yes']) 
+def command_fuckyeah(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'fuckyeah.jpg', 'rb')) 
  
-@bot.message_handler(commands=['spoiler']) # Indicamos que lo siguiente va a controlar el comando.
-def command_spoiler(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'spoileralert.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+@bot.message_handler(commands=['spoiler']) 
+def command_spoiler(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'spoileralert.jpg', 'rb')) 
 
 
-@bot.message_handler(commands=['quetefo']) # Indicamos que lo siguiente va a controlar el comando.
-def command_quetefo(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'quetefo.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+@bot.message_handler(commands=['quetefo']) 
+def command_quetefo(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'quetefo.jpg', 'rb')) 
  
-@bot.message_handler(commands=['viernes']) # Indicamos que lo siguiente va a controlar el comando.
-def command_viernes(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'viernes.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
+@bot.message_handler(commands=['viernes']) 
+def command_viernes(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'viernes.jpg', 'rb')) 
 
-@bot.message_handler(commands=['kde']) # Indicamos que lo siguiente va a controlar el comando.
-def command_kde(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
-    bot.send_photo( cid, open( 'kderock.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto    
- 
-
-
+@bot.message_handler(commands=['kde']) 
+def command_kde(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'kderock.jpg', 'rb')) 
  
 #############################################
 #Peticiones
