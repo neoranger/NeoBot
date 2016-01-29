@@ -49,7 +49,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help']) 
 def command_ayuda(m): 
     cid = m.chat.id 
-    bot.send_message( cid, "Comandos Disponibles: /hola /hello /kick /uppercut /hadouken /windowsero /stallman /ok /yes /nsa /attack /gentoo /kde /flame /vicman /deletethat /coding /nelson /spoiler /quetefo /viernes /roll /time /blogroll /tuxamigos /acerca /help") #
+    bot.send_message( cid, "Comandos Disponibles: /hola /hello /kick /uppercut /hadouken /windowsero /stallman /ok /yes /nsa /attack /gentoo /kde /flame /vicman /deletethat /coding /nelson /spoiler /quetefo /esssta /viernes /roll /time /blogroll /tuxamigos /acerca /help") #
  
 @bot.message_handler(commands=['hola']) 
 def command_hola(m): 
@@ -156,6 +156,11 @@ def command_viernes(m):
 def command_kde(m): 
     cid = m.chat.id 
     bot.send_photo( cid, open( 'kderock.jpg', 'rb')) 
+
+@bot.message_handler(commands=['esssta']) 
+def command_esssta(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'esssta.jpg', 'rb')) 
  
 #############################################
 #Peticiones
