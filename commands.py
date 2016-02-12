@@ -180,7 +180,12 @@ def command_litrona(m):
 @bot.message_handler(commands=['fede']) 
 def command_fede(m): 
     cid = m.chat.id 
-    bot.send_photo( cid, open( 'fede.jpg', 'rb')) 
+    bot.send_photo( cid, open( 'fede.jpg', 'rb'))
+    
+@bot.message_handler(commands=['welcome']) 
+def command_welcome(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'welcome.jpg', 'rb'))
 
 ################################################################## 
 #Peticiones
