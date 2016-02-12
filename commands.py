@@ -49,7 +49,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help']) 
 def command_ayuda(m): 
     cid = m.chat.id 
-    bot.send_message( cid, "Comandos Disponibles: /hola /hello /kick /uppercut /hadouken /windowsero /stallman /ok /yes /nsa /attack /gentoo /kde /flame /vicman /deletethat /coding /nelson /spoiler /quetefo /esssta /viernes /roll /time /blogroll /tuxamigos /acerca /help") #
+    bot.send_message( cid, "Comandos Disponibles: /hola /hello /kick /uppercut /hadouken /windowsero /stallman /ok /yes /nsa /attack /gentoo /kde /flame /vicman /deletethat /coding /nelson /spoiler /quetefo /esssta /fede /litrona /vegetta /what /viernes /roll /time /blogroll /tuxamigos /acerca /help") #
  
 @bot.message_handler(commands=['hola']) 
 def command_hola(m): 
@@ -161,7 +161,27 @@ def command_kde(m):
 def command_esssta(m): 
     cid = m.chat.id 
     bot.send_photo( cid, open( 'esssta.jpg', 'rb')) 
+
+@bot.message_handler(commands=['what']) 
+def command_what(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'what.jpg', 'rb')) 
  
-#############################################
+@bot.message_handler(commands=['vegetta']) 
+def command_vegetta(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'vegetta.jpg', 'rb')) 
+ 
+@bot.message_handler(commands=['litrona']) 
+def command_litrona(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'litrona.jpg', 'rb')) 
+ 
+@bot.message_handler(commands=['fede']) 
+def command_fede(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'fede.jpg', 'rb')) 
+
+################################################################## 
 #Peticiones
 bot.polling(none_stop=True) # Con esto, le decimos al bot que siga funcionando incluso si encuentra algun fallo.
