@@ -50,7 +50,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help']) 
 def command_ayuda(m): 
     cid = m.chat.id 
-    bot.send_message( cid, "Comandos Disponibles: /welcome /hola /hello /kick /uppercut /hadouken /windowsero /stallman /ok /yes /nsa /attack /gentoo /kde /flame /vicman /deletethat /coding /nelson /spoiler /quetefo /esssta /fede /litrona /vegetta /what /viernes /roll /time /blogroll /tuxamigos /acerca /help") #
+    bot.send_message( cid, "Comandos Disponibles: /welcome /hola /hello /kick /uppercut /hadouken /windowsero /stallman /ok /yes /nsa /attack /gentoo /kde /flame /tabla /vicman /deletethat /coding /nelson /spoiler /quetefo /esssta /fede /litrona /vegetta /what /viernes /roll /time /blogroll /tuxamigos /acerca /help") #
  
 @bot.message_handler(commands=['hola']) 
 def command_hola(m): 
@@ -187,6 +187,19 @@ def command_fede(m):
 def command_welcome(m): 
     cid = m.chat.id 
     bot.send_photo( cid, open( 'welcome.jpg', 'rb'))
+
+@bot.message_handler(commands=['tabla']) 
+def command_tabla(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'tabla.jpg', 'rb'))
+
+#@bot.message_handler(func=lambda message:
+#                     find_match("RUBY", message.text.upper()))
+#def love_ruby(message):
+#    logging.info("%s: %s" % (message.from_user.username, "ruby"))
+#    cid = message.chat.id
+#    username = message.from_user.username
+#    bot.send_message(cid, username + " ama Ruby")
 
 ################################################################## 
 #Peticiones
