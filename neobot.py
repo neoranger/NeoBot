@@ -50,7 +50,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help']) 
 def command_ayuda(m): 
     cid = m.chat.id 
-    bot.send_message( cid, "Comandos Disponibles: /welcome /hola /hello /kick /uppercut /hadouken /windowsero /stallman /ok /yes /nsa /attack /gentoo /kde /flame /tabla /vicman /deletethat /coding /nelson /spoiler /quetefo /esssta /fede /litrona /vegetta /what /viernes /roll /time /blogroll /tuxamigos /acerca /help") #
+    bot.send_message( cid, "Comandos Disponibles: /welcome /hola /hello /kick /uppercut /hadouken /windowsero /ubuntu /stallman /ok /yes /nsa /attack /gentoo /kde /flame /tabla /vicman /deletethat /coding /nelson /spoiler /quetefo /esssta /fede /litrona /vegetta /what /takataka /kill /viernes /roll /time /blogroll /tuxamigos /acerca /help") #
  
 @bot.message_handler(commands=['hola']) 
 def command_hola(m): 
@@ -143,10 +143,10 @@ def command_spoiler(m):
     bot.send_photo( cid, open( 'spoileralert.jpg', 'rb')) 
 
 
-@bot.message_handler(commands=['quetefo']) 
-def command_quetefo(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( 'quetefo.jpg', 'rb')) 
+#@bot.message_handler(commands=['quetefo']) 
+#def command_quetefo(m): 
+#    cid = m.chat.id 
+#    bot.send_photo( cid, open( 'quetefo.jpg', 'rb')) 
  
 @bot.message_handler(commands=['viernes']) 
 def command_viernes(m): 
@@ -193,8 +193,21 @@ def command_tabla(m):
     cid = m.chat.id 
     bot.send_photo( cid, open( 'tabla.jpg', 'rb'))
 
-#@bot.message_handler(func=lambda message:
-#                     find_match("RUBY", message.text.upper()))
+@bot.message_handler(commands=['takataka']) 
+def command_taka(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'takataka.jpg', 'rb'))
+
+@bot.message_handler(commands=['ubuntu']) 
+def command_ubuntu(m): 
+    cid = m.chat.id 
+    bot.send_message( cid, 'http://www.youtube.com/watch?v=xK-_OdlCGBg') 
+@bot.message_handler(commands=['kill']) 
+def command_kill(m): 
+    cid = m.chat.id 
+    bot.send_photo( cid, open( 'rambo.jpg', 'rb'))
+
+#find_match("RUBY", message.text.upper()))
 #def love_ruby(message):
 #    logging.info("%s: %s" % (message.from_user.username, "ruby"))
 #    cid = message.chat.id
