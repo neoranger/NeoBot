@@ -210,14 +210,19 @@ def command_kill(m):
 @bot.message_handler(commands=['format'])
 def command_format(m): 
     cid = m.chat.id 
-    bot.send_message( cid, m.text.split(None,1)[1],parse_mode='markdown') 
+    try:
+    bot.send_message( cid, m.text.split(None,1)[1],parse_mode='markdown')
+    except: IndexError
+    bot.send_message( cid, "Argument missing" )
+    except: Exception
+    bot.send_message( cid, "Invalid argument" )
 
 #find_match("RUBY", message.text.upper()))
 #def love_ruby(message):
 #    logging.info("%s: %s" % (message.from_user.username, "ruby"))
 #    cid = message.chat.id
 #    username = message.from_user.username
-#    bot.send_message(cid, username + " ama Ruby")
+#    bot.send_message(cid, username + " loves Ruby")
 
 ################################################################## 
 #Peticiones
