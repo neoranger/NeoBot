@@ -50,7 +50,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help']) 
 def command_ayuda(m): 
     cid = m.chat.id 
-    bot.send_message( cid, "Comandos Disponibles: /welcome /hola /hello /kick /uppercut /hadouken /windowsero /ubuntu /stallman /ok /yes /nsa /attack /gentoo /kde /flame /tabla /vicman /deletethat /coding /nelson /spoiler /quetefo /esssta /fede /litrona /vegetta /what /takataka /kill /viernes /roll /time /blogroll /tuxamigos /acerca /help") #
+    bot.send_message( cid, "Comandos Disponibles: /welcome /hola /hello /kick /uppercut /hadouken /windowsero /ubuntu /stallman /ok /yes /nsa /attack /gentoo /kde /flame /tabla /vicman /deletethat /coding /nelson /spoiler /quetefo /esssta /fede /litrona /vegetta /what /takataka /kill /viernes /roll /time /blogroll /format /tuxamigos /acerca /help") #
  
 @bot.message_handler(commands=['hola']) 
 def command_hola(m): 
@@ -211,11 +211,11 @@ def command_kill(m):
 def command_format(m): 
     cid = m.chat.id 
     try:
-    bot.send_message( cid, m.text.split(None,1)[1],parse_mode='markdown')
-    except: IndexError
-    bot.send_message( cid, "Argument missing" )
-    except: Exception
-    bot.send_message( cid, "Invalid argument" )
+	bot.send_message( cid, m.text.split(None,1)[1],parse_mode='markdown')
+    except IndexError:
+        bot.send_message( cid, "Argument missing" )
+    except Exception:
+        bot.send_message( cid, "Invalid argument" )
 
 #find_match("RUBY", message.text.upper()))
 #def love_ruby(message):
