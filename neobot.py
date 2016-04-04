@@ -207,6 +207,11 @@ def command_kill(m):
     cid = m.chat.id 
     bot.send_photo( cid, open( 'rambo.jpg', 'rb'))
 
+@bot.message_handler(commands=['format'])
+def command_format(m): 
+    cid = m.chat.id 
+    bot.send_message( cid, m.text.split(None,1)[1],parse_mode='markdown') 
+
 #find_match("RUBY", message.text.upper()))
 #def love_ruby(message):
 #    logging.info("%s: %s" % (message.from_user.username, "ruby"))
