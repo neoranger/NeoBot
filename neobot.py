@@ -142,12 +142,6 @@ def command_spoiler(m):
     cid = m.chat.id 
     bot.send_photo( cid, open( 'spoileralert.jpg', 'rb')) 
 
-
-#@bot.message_handler(commands=['quetefo']) 
-#def command_quetefo(m): 
-#    cid = m.chat.id 
-#    bot.send_photo( cid, open( 'quetefo.jpg', 'rb')) 
- 
 @bot.message_handler(commands=['viernes']) 
 def command_viernes(m): 
     cid = m.chat.id 
@@ -217,11 +211,11 @@ def command_format(m):
     except Exception:
         bot.send_message( cid, "Invalid argument" )
 
-#find_match("RUBY", message.text.upper()))
-#def love_ruby(message):
+#find_match("RUBY", message.text.upper())
+#def love_ruby(m):
 #    logging.info("%s: %s" % (message.from_user.username, "ruby"))
-#    cid = message.chat.id
-#    username = message.from_user.username
+#    cid = m.chat.id
+#    username = m.from_user.username
 #    bot.send_message(cid, username + " loves Ruby")
 
 ################################################################## 
