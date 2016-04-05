@@ -14,7 +14,7 @@ bot = telebot.TeleBot(TOKEN) # Create the bot object.
 @bot.message_handler(commands=['kick']) # Command
 def command_kick(m): 
     cid = m.chat.id # Store the user id
-    bot.send_photo( cid, open( '/imagenes/kick.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
+    bot.send_photo( cid, open( '/imagenes/kick.jpg', 'rb')) # With the 'send_photo()' function we can send any image
 
 @bot.message_handler(commands=['uppercut'])
 def command_uppercut(m): 
