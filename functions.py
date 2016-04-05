@@ -1,5 +1,5 @@
-
-#Funciones
+# -*- coding: utf-8 -*-
+#Functions
 @bot.message_handler(commands=['kick']) # Indicamos que lo siguiente va a controlar el comando.
 def command_kick(m): # Definimos una función que resuelva lo que necesitemos.
     cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
