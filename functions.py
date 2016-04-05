@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 
-import telebot # Librería de la API del bot.
-from telebot import types # Tipos para la API del bot.
-import time # Librería para hacer que el programa que controla el bot no se acabe.
+import telebot # Library of API bot.
+from telebot import types # Types from API bot
+import time 
 import random
 import datetime
 import token
 
-TOKEN =  token.token_id # Nuestro tokken del bot (el que @BotFather nos dió).
-bot = telebot.TeleBot(TOKEN) # Creamos el objeto de nuestro bot.
+TOKEN =  token.token_id # Our token (that's @BotFather give us).
+bot = telebot.TeleBot(TOKEN) # Create the bot object.
 
 #Functions
-@bot.message_handler(commands=['kick']) # Indicamos que lo siguiente va a controlar el comando.
-def command_kick(m): # Definimos una función que resuelva lo que necesitemos.
-    cid = m.chat.id # Guardamos el ID de la conversación para poder responder.
+@bot.message_handler(commands=['kick']) # Command
+def command_kick(m): 
+    cid = m.chat.id # Store the user id
     bot.send_photo( cid, open( '/imagenes/kick.jpg', 'rb')) # Con la función 'send_photo()' del bot, enviamos al ID de la conversación que hemos almacenado previamente la foto
 
 @bot.message_handler(commands=['uppercut'])
