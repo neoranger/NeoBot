@@ -8,7 +8,7 @@ import datetime
 import token
 import functions
  
-bot.skip_pending=True # Skip the pending messages
+functions.bot.skip_pending=True # Skip the pending messages
 #############################################
 #Listener
 def listener(messages): # Con esto, estamos definiendo una función llamada 'listener', que recibe como parámetro un dato llamado 'messages'.
@@ -17,9 +17,9 @@ def listener(messages): # Con esto, estamos definiendo una función llamada 'lis
         if m.content_type == 'text':
             print "[" + str(cid) + "]: " + m.text # Y haremos que imprima algo parecido a esto -> [52033876]: /start
  
-bot.set_update_listener(listener) # Así, le decimos al bot que utilice como función escuchadora nuestra función 'listener' declarada arriba.
+functions.bot.set_update_listener(listener) # Así, le decimos al bot que utilice como función escuchadora nuestra función 'listener' declarada arriba.
 #############################################
 
 ################################################################## 
 #Peticiones
-bot.polling(none_stop=True) # Con esto, le decimos al bot que siga funcionando incluso si encuentra algun fallo.
+functions.bot.polling(none_stop=True) # Con esto, le decimos al bot que siga funcionando incluso si encuentra algun fallo.
