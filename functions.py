@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+
+import telebot # Librería de la API del bot.
+from telebot import types # Tipos para la API del bot.
+import time # Librería para hacer que el programa que controla el bot no se acabe.
+import random
+import datetime
+import token
+
 #Functions
 @bot.message_handler(commands=['kick']) # Indicamos que lo siguiente va a controlar el comando.
 def command_kick(m): # Definimos una función que resuelva lo que necesitemos.
