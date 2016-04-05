@@ -7,6 +7,8 @@ import random
 import datetime
 import token
 
+bot = telebot.TeleBot(TOKEN) # Creamos el objeto de nuestro bot.
+
 #Functions
 @bot.message_handler(commands=['kick']) # Indicamos que lo siguiente va a controlar el comando.
 def command_kick(m): # Definimos una función que resuelva lo que necesitemos.
