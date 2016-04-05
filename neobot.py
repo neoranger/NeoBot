@@ -7,8 +7,6 @@ import random
 import datetime
 import token
 import functions
-
-TOKEN =  token.token_id # Nuestro tokken del bot (el que @BotFather nos dió).
  
 bot.skip_pending=True # Skip the pending messages
 #############################################
