@@ -10,7 +10,6 @@ import functions
 
 TOKEN =  token.token_id # Nuestro tokken del bot (el que @BotFather nos dió).
  
-bot = telebot.TeleBot(TOKEN) # Creamos el objeto de nuestro bot.
 bot.skip_pending=True # Skip the pending messages
 #############################################
 #Listener
