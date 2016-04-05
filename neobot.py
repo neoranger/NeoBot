@@ -5,7 +5,6 @@ from telebot import types # Tipos para la API del bot.
 import token
 import functions
  
-functions.bot = telebot.TeleBot(TOKEN) # Creamos el objeto de nuestro bot.
 functions.bot.skip_pending=True # Skip the pending messages
 #############################################
 #Listener
