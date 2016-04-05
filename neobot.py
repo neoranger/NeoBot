@@ -2,9 +2,6 @@
  
 import telebot # Librería de la API del bot.
 from telebot import types # Tipos para la API del bot.
-import time # Librería para hacer que el programa que controla el bot no se acabe.
-import random
-import datetime
 import token
 import functions
  
