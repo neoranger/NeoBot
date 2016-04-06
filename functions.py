@@ -204,7 +204,7 @@ def command_format(m):
 def handle_text(m):
     string_array = str(m.text).split(None,1)
     if string_array[0] == "/note":
-    	open("./imagenes/notas.txt", "w").write("\n" + string_array[1])
+    	open("./imagenes/notas.txt", "a").write("\n" + string_array[1])
 
 #find_match("RUBY", message.text.upper())
 #def love_ruby(m):
