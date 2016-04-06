@@ -24,7 +24,7 @@ def command_uppercut(m):
 @bot.message_handler(commands=['hadouken']) 
 def command_hadouken(m): 
     cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/hadouken.gif', 'rb')) 
+    bot.send_gif( cid, open( './imagenes/hadouken.gif', 'rb')) 
     
 @bot.message_handler(commands=['windowsero']) 
 def command_windowsero(m): 
@@ -184,6 +184,7 @@ def command_taka(m):
 def command_ubuntu(m): 
     cid = m.chat.id 
     bot.send_message( cid, 'http://www.youtube.com/watch?v=xK-_OdlCGBg') 
+    
 @bot.message_handler(commands=['kill']) 
 def command_kill(m): 
     cid = m.chat.id 
