@@ -199,6 +199,12 @@ def command_format(m):
         bot.send_message( cid, "Argument missing" )
     except Exception:
         bot.send_message( cid, "Invalid argument" )
+        
+@bot.message_handler(content_types=['text'])
+def handle_text(m):
+    string_array = str(m.text).split(" ")
+    if string_array[0] == "/note":
+    	open("./imagenes/notas.txt", "w").write(admins + "\n" + string_array[1])
 
 #find_match("RUBY", message.text.upper())
 #def love_ruby(m):
