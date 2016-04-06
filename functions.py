@@ -204,7 +204,10 @@ def command_format(m):
 def handle_text(m):
     string_array = str(m.text).split(None,1)
     if string_array[0] == "/note":
-    	open("./imagenes/notas.txt", "a").write("\n" + string_array[1])
+    	try:
+    	   open("./imagenes/notas.txt", "a").write("\n" + string_array[1])
+    	except IndexError:
+    	   bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar" )
 
 #find_match("RUBY", message.text.upper())
 #def love_ruby(m):
