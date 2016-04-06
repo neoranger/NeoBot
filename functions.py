@@ -6,6 +6,7 @@ import time
 import random
 import datetime
 import token
+import codecs
 
 TOKEN =  token.token_id # Our token (that's @BotFather give us).
 bot = telebot.TeleBot(TOKEN) # Create the bot object.
@@ -205,7 +206,7 @@ def handle_text(m):
     string_array = str(m.text).split(None,1)
     if string_array[0] == "/note":
     	try:
-    	   open("./imagenes/notas.txt", "a").write("\n" + string_array[1])
+    	   codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1])
     	except IndexError:
     	   bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar" )
 
