@@ -8,6 +8,7 @@ import datetime
 import token
 import codecs
 import re
+import logging
 
 TOKEN =  token.token_id # Our token (that's @BotFather give us).
 bot = telebot.TeleBot(TOKEN) # Create the bot object.
