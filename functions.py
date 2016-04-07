@@ -210,9 +210,10 @@ def handle_text(m):
     	except IndexError:
     	   bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar" )
 
-#find_match("RUBY", message.text.upper())
-#def love_ruby(m):
-#    logging.info("%s: %s" % (message.from_user.username, "ruby"))
-#    cid = m.chat.id
-#    username = m.from_user.username
-#    bot.send_message(cid, username + " loves Ruby")
+@bot.message_handler(func=lambda message:
+	find_match("RUBY", message.text.upper())
+def love_ruby(m):
+    logging.info("%s: %s" % (message.from_user.username, "ruby"))
+    cid = m.chat.id
+    username = m.from_user.username
+    bot.send_message(cid, username + " loves Ruby")
