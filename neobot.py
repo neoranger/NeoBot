@@ -1,22 +1,22 @@
 ﻿# -*- coding: utf-8 -*-
  
-import telebot # Librería de la API del bot.
-from telebot import types # Tipos para la API del bot.
+import telebot
+from telebot import types
 import token
 import functions
  
-functions.bot.skip_pending=True # Skip the pending messages
+functions.bot.skip_pending=True
 #############################################
 #Listener
-def listener(messages): # Con esto, estamos definiendo una función llamada 'listener', que recibe como parámetro un dato llamado 'messages'.
-    for m in messages: # Por cada dato 'm' en el dato 'messages'
-        cid = m.chat.id # Almacenaremos el ID de la conversación.
+def listener(messages):
+    for m in messages:
+        cid = m.chat.id
         if m.content_type == 'text':
-            print "[" + str(cid) + "]: " + m.text # Y haremos que imprima algo parecido a esto -> [52033876]: /start
+            print "[" + str(cid) + "]: " + m.text
  
-functions.bot.set_update_listener(listener) # Así, le decimos al bot que utilice como función escuchadora nuestra función 'listener' declarada arriba.
+functions.bot.set_update_listener(listener)
 #############################################
 
 ################################################################## 
 #Peticiones
-functions.bot.polling(none_stop=True) # Con esto, le decimos al bot que siga funcionando incluso si encuentra algun fallo.
+functions.bot.polling(none_stop=True)

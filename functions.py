@@ -201,18 +201,19 @@ def command_format(m):
     except Exception:
         bot.send_message( cid, "Invalid argument" )
         
-@bot.message_handler(content_types=['text'])
-def handle_text(m):
-    string_array = str(m.text).split(None,1)
-    if string_array[0] == "/note":
-    	try:
-    	   codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1])
-    	except IndexError:
-    	   bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar" )
+#@bot.message_handler(content_types=['text'])
+#def handle_text(m):
+#    string_array = str(m.text).split(None,1)
+#    if string_array[0] == "/note":
+#    	try:
+#    	   codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1])
+#    	except IndexError:
+#    	   bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar" )
 
-#find_match("RUBY", message.text.upper())
-#def love_ruby(m):
-#    logging.info("%s: %s" % (message.from_user.username, "ruby"))
-#    cid = m.chat.id
-#    username = m.from_user.username
-#    bot.send_message(cid, username + " loves Ruby")
+@bot.message_handler(func=lambda message:
+	find_match("RUBY", message.text.upper())
+def love_ruby(m):
+    logging.info("%s: %s" % (message.from_user.username, "ruby"))
+    cid = m.chat.id
+    username = m.from_user.username
+    bot.send_message(cid, username + " loves Ruby")
