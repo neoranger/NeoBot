@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import telebot # Library of API bot.
 from telebot import types # Types from API bot
 import time 
@@ -207,14 +206,14 @@ def command_format(m):
     except Exception:
         bot.send_message( cid, "Invalid argument" )
         
-@bot.message_handler(content_types=['text'])
-def handle_text(m):
-    string_array = str(m.text).split(None,1)
-    if string_array[0] == "python":
-        try:
-            cid = m.chat.id
-            username = m.from_user.username
-            bot.send_message(cid, username + " ama a Python")
+# @bot.message_handler(content_types=['text'])
+# def handle_text(m):
+#     string_array = str(m.text).split(None,1)
+#     if string_array[0] == "python":
+#         try:
+#             cid = m.chat.id
+#             username = m.from_user.username
+#             bot.send_message(cid, username + " ama a Python")
 
 #@bot.message_handler(content_types=['text'])
 #def handle_text(m):
