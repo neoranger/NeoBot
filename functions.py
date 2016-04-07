@@ -217,26 +217,26 @@ def command_format(m):
 #    	except IndexError:
 #    	   bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar" )
 
-@bot.message_handler(func=lambda message:
+@bot.message_handler(func=lambda m:
     find_ruby("RUBY", m.text.upper()))
 def love_ruby(m):
-    logging.info("%s: %s" % (message.from_user.username, "ruby"))
+    logging.info("%s: %s" % (m.from_user.username, "ruby"))
     cid = m.chat.id
     username = m.from_user.username
     bot.send_message(cid, username + " loves Ruby")
 
-@bot.message_handler(func=lambda message:
+@bot.message_handler(func=lambda m:
     find_java("JAVA", m.text.upper()))
 def love_java(m):
-    logging.info("%s: %s" % (message.from_user.username, "java"))
+    logging.info("%s: %s" % (m.from_user.username, "java"))
     cid = m.chat.id
     username = m.from_user.username
     bot.send_message(cid, username + " loves Java")
     
-@bot.message_handler(func=lambda message:
+@bot.message_handler(func=lambda m:
     find_python("PYTHON", m.text.upper()))
 def love_python(m):
-    logging.info("%s: %s" % (message.from_user.username, "python"))
+    logging.info("%s: %s" % (m.from_user.username, "python"))
     cid = m.chat.id
     username = m.from_user.username
     bot.send_message(cid, username + " loves Python")
