@@ -7,9 +7,15 @@ import random
 import datetime
 import token
 import codecs
+import re
 
 TOKEN =  token.token_id # Our token (that's @BotFather give us).
 bot = telebot.TeleBot(TOKEN) # Create the bot object.
+
+# Search function used as easter eggs
+find_ruby = re.compile(r"(?i)\bRUBY\b").search
+find_java = re.compile(r"(?i)\bJAVA\b").search
+find_python = re.compile(r"(?i)\bPYTHON\b").search
 
 #Functions
 @bot.message_handler(commands=['kick']) # Command
@@ -217,3 +223,19 @@ def love_ruby(m):
     cid = m.chat.id
     username = m.from_user.username
     bot.send_message(cid, username + " loves Ruby")
+
+@bot.message_handler(func=lambda message:
+    find_match("JAVA", m.text.upper()))
+def love_java(m):
+    logging.info("%s: %s" % (message.from_user.username, "java"))
+    cid = m.chat.id
+    username = m.from_user.username
+    bot.send_message(cid, username + " loves Java")
+    
+@bot.message_handler(func=lambda message:
+    find_match("PYTHON", m.text.upper()))
+def love_python(m):
+    logging.info("%s: %s" % (message.from_user.username, "python"))
+    cid = m.chat.id
+    username = m.from_user.username
+    bot.send_message(cid, username + " loves Python")
