@@ -9,7 +9,7 @@ import codecs
 #import re
 #import logging
 
-TOKEN = token_id
+TOKEN = token.token_id
 bot = telebot.TeleBot(TOKEN) # Create the bot object.
 
 # Search function used as easter eggs
