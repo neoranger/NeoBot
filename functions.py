@@ -7,16 +7,14 @@ import random
 import datetime
 import token
 import codecs
-import re
-import logging
+#import re
+#import logging
 
 TOKEN =  token.token_id # Our token (that's @BotFather give us).
 bot = telebot.TeleBot(TOKEN) # Create the bot object.
 
 # Search function used as easter eggs
-find_ruby = re.compile(r"(?i)\bRUBY\b").search
-find_java = re.compile(r"(?i)\bJAVA\b").search
-find_python = re.compile(r"(?i)\bPYTHON\b").search
+#find_python = re.compile(r"(?i)\bPYTHON\b").search
 
 #Functions
 @bot.message_handler(commands=['kick']) # Command
@@ -208,6 +206,15 @@ def command_format(m):
     except Exception:
         bot.send_message( cid, "Invalid argument" )
         
+@bot.message_handler(content_types=['text'])
+def handle_text(m):
+    string_array = str(m.text).split(None,1)
+    if string_array[0] == "python":
+    	try:
+    	   cid = m.chat.id
+    	   username = m.from_user.username
+    	   bot.send_message(cid, username + " ama a Python")
+
 #@bot.message_handler(content_types=['text'])
 #def handle_text(m):
 #    string_array = str(m.text).split(None,1)
@@ -217,26 +224,10 @@ def command_format(m):
 #    	except IndexError:
 #    	   bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar" )
 
-@bot.message_handler(func=lambda m:
-    find_ruby("RUBY", m.text.upper()))
-def love_ruby(m):
-    logging.info("%s: %s" % (m.from_user.username, "ruby"))
-    cid = m.chat.id
-    username = m.from_user.username
-    bot.send_message(cid, username + " loves Ruby")
-
-@bot.message_handler(func=lambda m:
-    find_java("JAVA", m.text.upper()))
-def love_java(m):
-    logging.info("%s: %s" % (m.from_user.username, "java"))
-    cid = m.chat.id
-    username = m.from_user.username
-    bot.send_message(cid, username + " loves Java")
-    
-@bot.message_handler(func=lambda m:
-    find_python("PYTHON", m.text.upper()))
-def love_python(m):
-    logging.info("%s: %s" % (m.from_user.username, "python"))
-    cid = m.chat.id
-    username = m.from_user.username
-    bot.send_message(cid, username + " loves Python")
+#@bot.message_handler(func=lambda m:
+#    find_python("PYTHON", m.text.upper()))
+#def love_python(m):
+#    logging.info("%s: %s" % (m.from_user.username, "python"))
+#    cid = m.chat.id
+#    username = m.from_user.username
+#    bot.send_message(cid, username + " loves Python")
