@@ -29,13 +29,8 @@ def command_uppercut(m):
 @bot.message_handler(commands=['hadouken']) 
 def command_hadouken(m): 
     cid = m.chat.id 
-<<<<<<< HEAD
     bot.send_photo( cid, open( './imagenes/hadouken.gif', 'rb')) 
-    
-=======
-    bot.send_gif( cid, open( './imagenes/hadouken.gif', 'rb')) 
 
->>>>>>> a96ba1bab4e89b57e975bfeb598d58c10704ac0c
 @bot.message_handler(commands=['windowsero']) 
 def command_windowsero(m): 
     cid = m.chat.id 
