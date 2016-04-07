@@ -218,7 +218,7 @@ def command_format(m):
 #    	   bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar" )
 
 @bot.message_handler(func=lambda message:
-    find_match("RUBY", m.text.upper()))
+    find_ruby("RUBY", m.text.upper()))
 def love_ruby(m):
     logging.info("%s: %s" % (message.from_user.username, "ruby"))
     cid = m.chat.id
@@ -226,7 +226,7 @@ def love_ruby(m):
     bot.send_message(cid, username + " loves Ruby")
 
 @bot.message_handler(func=lambda message:
-    find_match("JAVA", m.text.upper()))
+    find_java("JAVA", m.text.upper()))
 def love_java(m):
     logging.info("%s: %s" % (message.from_user.username, "java"))
     cid = m.chat.id
@@ -234,7 +234,7 @@ def love_java(m):
     bot.send_message(cid, username + " loves Java")
     
 @bot.message_handler(func=lambda message:
-    find_match("PYTHON", m.text.upper()))
+    find_python("PYTHON", m.text.upper()))
 def love_python(m):
     logging.info("%s: %s" % (message.from_user.username, "python"))
     cid = m.chat.id
