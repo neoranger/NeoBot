@@ -1,8 +1,7 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
  
 import telebot
 from telebot import types
-import token
 import functions
  
 functions.bot.skip_pending=True
