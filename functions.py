@@ -215,7 +215,12 @@ def command_maestruli(m):
 def command_fuckyou(m): 
     cid = m.chat.id 
     bot.send_document( cid, open( './imagenes/fuckyou.mp4', 'rb')) 
- 
+
+@bot.message_handler(commands=['arch'])
+def command_arch(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/arch.jpg', 'rb'))
+
 # @bot.message_handler(content_types=['text'])
 # def handle_text(m):
 #     string_array = str(m.text).split(None,1)
