@@ -205,7 +205,17 @@ def command_format(m):
         bot.send_message( cid, "Argument missing" )
     except Exception:
         bot.send_message( cid, "Invalid argument" )
-        
+
+@bot.message_handler(commands=['maestruli']) 
+def command_maestruli(m): 
+    cid = m.chat.id 
+    bot.send_document( cid, open( './imagenes/maestruli.mp4', 'rb')) 
+
+@bot.message_handler(commands=['fuckyou']) 
+def command_fuckyou(m): 
+    cid = m.chat.id 
+    bot.send_document( cid, open( './imagenes/fuckyou.mp4', 'rb')) 
+ 
 # @bot.message_handler(content_types=['text'])
 # def handle_text(m):
 #     string_array = str(m.text).split(None,1)
