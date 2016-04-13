@@ -221,14 +221,14 @@ def command_arch(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/arch.jpg', 'rb'))
 
-# @bot.message_handler(content_types=['text'])
-# def handle_text(m):
-#     string_array = str(m.text).split(None,1)
-#     if string_array[0] == "python":
+#@bot.message_handler(content_types=['text'])
+#def handle_text(m):
+#    string_array = str(m.text).split(None,1)
+#    if string_array[0] == 'python':
 #         try:
 #             cid = m.chat.id
 #             username = m.from_user.username
-#             bot.send_message(cid, username + " ama a Python")
+#             bot.send_message( cid, username + " ama a Python" )
 
 #@bot.message_handler(content_types=['text'])
 #def handle_text(m):
