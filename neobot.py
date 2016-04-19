@@ -2,8 +2,10 @@
 import telebot
 from telebot import types
 import functions
+import triggers
  
 functions.bot.skip_pending=True
+triggers.bot.skip_pending=True
 #############################################
 #Listener
 def listener(messages):
