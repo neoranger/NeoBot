@@ -46,18 +46,6 @@ def get_triggers(group_id):
     else:
         return False
     
-#Delete whitespaces at start & end
-def trim(s):
-    i = 0
-    while(s[i] == ' '):
-        i += 1
-    s = s[i:]
-    i = len(s)-1
-    while(s[i] == ' '):
-        i-= 1
-    s = s[:i+1]
-    return s    
-
 #Function to check if a message is too old(60 seconds) to answer.
 def is_recent(m):
     return (time.time() - m.date) < 60   
