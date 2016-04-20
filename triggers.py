@@ -27,7 +27,7 @@ if exists(tfile):
     with open(tfile) as f:
         triggers = json.load(f)
 else:
-    #print("Triggers file not found, creating.")
+    print("Triggers file not found, creating.")
     with open(tfile,'w') as f:
         json.dump({}, f)
 
@@ -36,7 +36,7 @@ def newTrigger(trigger, response):
     triggers[trigger.lower()] = response
     with open(tfile, "w") as f:
         json.dump(triggers, f)
-    #print("triggers file saved")
+    print("triggers file saved")
     
 #Delete whitespaces at start & end
 def trim(s):
@@ -55,15 +55,15 @@ def trim(s):
 def add(m):
     cid = m.chat.id
     text = m.text[4:]
-    #print("Apending :" + text)
+    print("Apending :" + text)
     try:
         i = text.rindex(separator)
-        #print("I value = " + str(i))
+        print("I value = " + str(i))
         tr = text[:i]
         re = text[i+1:]
         tr = trim(tr)
         re = trim(re)
-        #print("TR = [" + tr + "] - RE = [" + re + "]")
+        print("TR = [" + tr + "] - RE = [" + re + "]")
         newTrigger(tr,re)
         bot.send_message(cid, "Trigger Added: Trigger["+tr+"] - Response["+re+"]")
     except:
@@ -80,7 +80,7 @@ def size(m):
 def response(m):
     if(m.from_user.id in ignored):
         return
-    #print("Checking for triggers in Message [" + m.text + "]")
+    print("Checking for triggers in Message [" + m.text + "]")
     for t in triggers:
         if t in m.text:
             bot.reply_to(m, triggers[t])
