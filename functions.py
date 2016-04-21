@@ -100,7 +100,7 @@ def add(m):
         bot.reply_to(m, msg)
         save_triggers()
     else:
-        if(m.chat.id != owner):
+        if(m.chat.id != '-8861523'):
             return
 
 @bot.message_handler(commands=['del'])
