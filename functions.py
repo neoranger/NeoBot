@@ -12,7 +12,7 @@ import os
 #import re
 #import logging
 
-TOKEN = '193495980:AAHBS2z77Y9W4eSrQrgWwHaNiCrFX7hgzHg'
+TOKEN = 'YOUR TOKEN HERE'
 bot = telebot.TeleBot(TOKEN) # Creating our bot object.
 bot.skip_pending=True
 #######################################
