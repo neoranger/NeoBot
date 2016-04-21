@@ -4,20 +4,17 @@ from telebot import types # Types from API bot
 import time 
 import random
 import datetime
-import token
 import codecs
 import sys
 import json
 from os.path import exists
-import StringIO
-import user
 import os
 #import re
 #import logging
 
-TOKEN = token.token_id
-bot = telebot.TeleBot(TOKEN) # Create the bot object.
-
+TOKEN = '193495980:AAHBS2z77Y9W4eSrQrgWwHaNiCrFX7hgzHg'
+bot = telebot.TeleBot(TOKEN) # Creating our bot object.
+bot.skip_pending=True
 #######################################
 #TRIGGERS SECTION
 triggers = {}
@@ -52,6 +49,12 @@ def get_triggers(group_id):
 def is_recent(m):
     return (time.time() - m.date) < 60   
 
+
+added_message = '''
+New Trigger Created:
+Trigger [{}]
+Response [{}]
+'''
 #END TRIGGERS SECTION
 #######################################
 
@@ -328,7 +331,7 @@ def command_kill(m):
 def command_format(m):
     cid = m.chat.id
     try:
-	bot.send_message( cid, m.text.split(None,1)[1],parse_mode='markdown')
+        bot.send_message( cid, m.text.split(None,1)[1],parse_mode='markdown')
     except IndexError:
         bot.send_message( cid, "Argument missing" )
     except Exception:
@@ -374,3 +377,14 @@ def command_arch(m):
 #    cid = m.chat.id
 #    username = m.from_user.username
 #    bot.send_message(cid, username + " loves Python")
+
+@bot.message_handler(func=lambda m: True)
+def response(m):
+    if(m.chat.type in ['group', 'supergroup']):
+        trg = get_triggers(m.chat.id)
+        if(trg):
+            for t in trg.keys():
+                if t.lower() in m.text.lower():
+                    bot.reply_to(m, trg[t])
+
+print('Functions loaded')
