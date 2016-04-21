@@ -9,10 +9,11 @@ import sys
 import json
 from os.path import exists
 import os
+import token
 #import re
 #import logging
 
-TOKEN = 'YOUR TOKEN HERE'
+TOKEN = token.token_id
 bot = telebot.TeleBot(TOKEN) # Creating our bot object.
 bot.skip_pending=True
 #######################################
