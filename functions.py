@@ -10,6 +10,7 @@ import json
 from os.path import exists
 import os
 import token
+import user
 #import re
 #import logging
 
@@ -353,31 +354,24 @@ def command_arch(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/arch.jpg', 'rb'))
 
-#@bot.message_handler(content_types=['text'])
-#def handle_text(m):
-#    string_array = str(m.text).split(None,1)
-#    if string_array[0] == 'python':
-#         try:
-#             cid = m.chat.id
-#             username = m.from_user.username
-#             bot.send_message( cid, username + " ama a Python" )
+@bot.message_handler(content_types=['text'])
+def handle_text(m):
+    cid = m.chat.id
+    string_array = str(m.text).split(None,1)
+    if string_array[0] == "/note" and user.user_id == cid:
+        try:
+            grabo_nota = (codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1]))
+        except IndexError:
+            bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar. Si no está habilitado para grabar no se moleste en usar el comando" )
 
-#@bot.message_handler(content_types=['text'])
-#def handle_text(m):
-#    string_array = str(m.text).split(None,1)
-#    if string_array[0] == "/note":
-#        try:
-#            codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1])
-#        except IndexError:
-#            bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar" )
-
-#@bot.message_handler(func=lambda m:
-#    find_python("PYTHON", m.text.upper()))
-#def love_python(m):
-#    logging.info("%s: %s" % (m.from_user.username, "python"))
-#    cid = m.chat.id
-#    username = m.from_user.username
-#    bot.send_message(cid, username + " loves Python")
+#Specials functions
+def send_message_checking_permission(m, response):
+    cid = m.chat.id
+    uid = m.from_user.id
+    if uid != user.user_id:
+        bot.send_message(cid, "You can't use the bot")
+        return
+    bot.send_message(cid, response)
 
 @bot.message_handler(func=lambda m: True)
 def response(m):
