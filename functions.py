@@ -361,6 +361,7 @@ def handle_text(m):
     if string_array[0] == "/note" and user.user_id == cid:
         try:
             grabo_nota = (codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1]))
+            send_message_checking_permission(m, grabo_nota)
         except IndexError:
             bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar. Si no está habilitado para grabar no se moleste en usar el comando" )
 
