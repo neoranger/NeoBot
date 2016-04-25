@@ -354,12 +354,11 @@ def command_arch(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/arch.jpg', 'rb'))
 
-@bot.message_handler(commands=['note'])
-def command_note(m):
-    cid = m.chat.id
-    string_array = str(m.text).split(None,1)
-    grabo_nota = (codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1]))
-    send_message_checking_permission(m, grabo_nota)
+#@bot.message_handler(commands=['note'])
+#def command_note(m):
+#    string_array = str(m.text).split(None,1)
+#    grabo_nota = (codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1]))
+#    send_message_checking_permission(m, grabo_nota)
 #    if string_array[0] == "/note" and user.user_id == cid:
 #        try:
 #            grabo_nota = (codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1]))
