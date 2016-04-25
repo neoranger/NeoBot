@@ -177,7 +177,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help']) 
 def command_ayuda(m): 
     cid = m.chat.id 
-    bot.send_message( cid, "Comandos Disponibles: /welcome /hola /hello /add /del /size /ignore /kick /uppercut /hadouken /windowsero /ubuntu /stallman /ok /yes /nsa /attack /gentoo /kde /flame /tabla /vicman /deletethat /coding /nelson /spoiler /quetefo /esssta /fede /litrona /vegetta /what /takataka /kill /viernes /roll /time /blogroll /format /fuckyou /arch /tuxamigos /acerca /help") #
+    bot.send_message( cid, "Comandos Disponibles: /welcome /hola /hello /add /del /size /ignore /kick /uppercut /hadouken /windowsero /ubuntu /stallman /ok /yes /nsa /attack /gentoo /kde /flame /tabla /vicman /deletethat /coding /nelson /spoiler /quetefo /esssta /fede /litrona /vegetta /what /takataka /kill /viernes /roll /time /blogroll /format /fuckyou /arch /tuxamigos /note /acerca /help") #
 
 @bot.message_handler(commands=['hola']) 
 def command_hola(m): 
