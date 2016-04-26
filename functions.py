@@ -149,6 +149,11 @@ def all(m):
 #find_python = re.compile(r"(?i)\bPYTHON\b").search
 
 #Functions
+@bot.message_handler(content_types=['new_chat_participant'])
+def command_new_user(m):
+    cid = m.chat.id
+    bot.send_message(cid, '@' + str(m.new_chat_participant.username) + ' Bienvenido!! Te recomendamos usar el comando /Welcome para saber las reglas del grupo.')
+
 @bot.message_handler(commands=['kick']) # Command
 def command_kick(m): 
     cid = m.chat.id # Store the user id
