@@ -11,6 +11,7 @@ from os.path import exists
 import os
 import token
 import user
+import feedparser
 #import re
 #import logging
 
@@ -143,6 +144,28 @@ def all(m):
             bot.reply_to(m, 'This group doesn\'t have triggers.')
 
 #End Triggers Management Section
+#######################################
+
+#######################################
+#Funtion for feedparser
+#CODE TAKEN FROM:
+#https://gist.github.com/Jeshwanth/99cf05f4477ab0161349        
+def get_feed(url):
+    try:
+        feed = feedparser.parse(url)
+    except:
+        return 'Invalid url.'
+    y = len(feed[ "items" ])
+    y = 5 if y > 5 else y
+    if(y < 1):
+        return 'Nothing found'
+    lines = ['<b>Feed:</b>'] 
+    for x in range(y):
+        lines.append(
+        u'-&gt <a href="{1}">{0}</a>.'.format(
+        u'' + feed[ "items" ][x][ "title" ], 
+        u'' + feed[ "items" ][x][ "link" ]))
+    return u'' + '\n'.join(lines)
 #######################################
 
 # Search function used as easter eggs
@@ -363,6 +386,12 @@ def command_fuckyou(m):
 def command_arch(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/arch.jpg', 'rb'))
+
+@bot.message_handler(commands=['feed']) 
+def command_feed(m): 
+    cid = m.chat.id
+    url = str(m.text).split(None,1)
+    bot.send_message(cid, get_feed(url)) 
 
 #@bot.message_handler(commands=['note'])
 #def command_note(m):
