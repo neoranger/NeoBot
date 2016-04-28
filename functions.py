@@ -394,7 +394,7 @@ def command_feed(m):
     cid = m.chat.id
     url = str(m.text).split(None,1)
     print (url)
-    bot.send_message(cid, (parse_mode="HTML"(get_feed(url[1])))) 
+    bot.send_message(cid, get_feed(url[1])) 
 
 #@bot.message_handler(commands=['note'])
 #def command_note(m):
