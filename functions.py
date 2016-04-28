@@ -360,7 +360,7 @@ def command_ubuntu(m):
 @bot.message_handler(commands=['kill'])
 def command_kill(m):
     cid = m.chat.id
-    user = str(m.text).split(None,1)
+    user[1] = str(m.text).split(None,1)
     bot.send_message( cid, "Muere!!!" + str(user))
     bot.send_photo( cid, open( './imagenes/rambo.jpg', 'rb'))
 
