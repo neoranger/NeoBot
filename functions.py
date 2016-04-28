@@ -147,7 +147,7 @@ def all(m):
 #######################################
 
 #######################################
-#Funtion for feedparser
+#Function for feedparser
 #CODE TAKEN FROM:
 #https://gist.github.com/Jeshwanth/99cf05f4477ab0161349        
 def get_feed(url):
@@ -210,7 +210,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help']) 
 def command_ayuda(m): 
     cid = m.chat.id 
-    bot.send_message( cid, "Comandos Disponibles: /welcome /hola /hello /add /del /size /ignore /kick /uppercut /hadouken /windowsero /ubuntu /stallman /ok /yes /nsa /attack /gentoo /kde /flame /tabla /vicman /deletethat /coding /nelson /spoiler /quetefo /esssta /fede /litrona /vegetta /what /takataka /kill /viernes /roll /time /blogroll /format /fuckyou /arch /tuxamigos /note /acerca /help") #
+    bot.send_message( cid, "Comandos Disponibles: /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /vicman\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /roll\n /time\n /blogroll\n /format\n /fuckyou\n /arch\n /tuxamigos\n /note\n /acerca\n /help\n") #
 
 @bot.message_handler(commands=['hola']) 
 def command_hola(m): 
@@ -360,6 +360,8 @@ def command_ubuntu(m):
 @bot.message_handler(commands=['kill'])
 def command_kill(m):
     cid = m.chat.id
+    user = str(m.text).split(None,1)
+    bot.send_message( cid, 'Muere!!!' + user)
     bot.send_photo( cid, open( './imagenes/rambo.jpg', 'rb'))
 
 @bot.message_handler(commands=['format'])
