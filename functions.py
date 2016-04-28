@@ -391,6 +391,7 @@ def command_arch(m):
 def command_feed(m): 
     cid = m.chat.id
     url = str(m.text).split(None,1)
+    print (url)
     bot.send_message(cid, get_feed(url)) 
 
 #@bot.message_handler(commands=['note'])
