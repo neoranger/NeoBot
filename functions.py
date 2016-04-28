@@ -160,18 +160,13 @@ def get_feed(url):
     if(y < 1):
         return 'Nothing found'
     lines = ['<b>Feed:</b>'] 
-#    for x in range(y):
-#        lines.append(
-#        u'-&gt <a href="{1}">{0}</a>.'.format(
-#        u'' + feed[ "items" ][x][ "title" ], 
-#        u'' + feed[ "items" ][x][ "link" ]))
-#    return u'' + '\n'.join(lines)
     for x in range(y):
         lines.append(
-        u''.format(
+        u'-&gt <a href="{1}">{0}</a>.'.format(
         u'' + feed[ "items" ][x][ "title" ], 
         u'' + feed[ "items" ][x][ "link" ]))
     return u'' + '\n'.join(lines)
+
 #######################################
 
 # Search function used as easter eggs
