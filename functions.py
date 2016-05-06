@@ -111,7 +111,7 @@ def add(m):
 
 @bot.message_handler(commands=['del'])
 def delete(m):
-    if (m.from_user.id in owners.owner):
+    if (m.from_user.id not in owners.owner):
         bot.reply_to(m, 'No tienes permisos')
         return    
     if(len(m.text.split()) < 2):
