@@ -111,7 +111,7 @@ def add(m):
 
 @bot.message_handler(commands=['del'])
 def delete(m):
-    if (m.from_user.id != owner):
+    if (m.from_user.id != owners.owner):
         bot.reply_to(m, 'No tienes permisos')
         return    
     if(len(m.text.split()) < 2):
@@ -347,7 +347,7 @@ def command_fede(m):
 
 @bot.message_handler(commands=['welcome']) 
 def command_welcome(m): 
-    if (m.from_group.id == owner):
+    if (m.chat.id == -1001042117783):
         cid = m.chat.id
         bot.send_photo( cid, open( './imagenes/welcome.jpg', 'rb'))
     else:
@@ -414,8 +414,6 @@ def command_id(m):
     username = m.from_user.username
     uid = m.from_user.id
     bot.send_message(cid, "You are: @" + str(username)+ " " + "And your Telegram ID is: " + str(uid))	
-    
-
 
 #@bot.message_handler(commands=['note'])
 #def command_note(m):
