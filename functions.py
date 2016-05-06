@@ -66,6 +66,10 @@ Response [{}]
 #Adds another trigger-response. ex: "/add Hi / Hi!! :DD"
 @bot.message_handler(commands=['add'])
 def add(m):
+    if (m.from_user.id != owner):
+        bot.reply_to(m, 'No tienes permisos')
+        return
+
     if(m.reply_to_message):
         if(m.reply_to_message.text):
             if(len(m.reply_to_message.text.split()) < 2):
@@ -397,11 +401,12 @@ def command_feed(m):
     print (url)
     bot.send_message(cid, get_feed(url[1]),disable_web_page_preview=True,parse_mode="HTML") 
     
-@bot.message_handler(commands=['who']) 
+@bot.message_handler(commands=['id']) 
 def command_id(m): 
     cid = m.chat.id 
-    uid = m.chat.user_id
-    bot.send_message(cid, "You are: " + cid, "User: " + uid)	
+    username = m.from_user.username
+    uid = m.from_user.id
+    bot.send_message(cid, "You are: @" + str(username)+ " " + "And your Telegram ID is: " + str(uid))	
 
 #@bot.message_handler(commands=['note'])
 #def command_note(m):
