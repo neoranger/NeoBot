@@ -3,3 +3,4 @@ token.py
 /imagenes/notas.txt
 triggers.json
 user.py
+owners.py

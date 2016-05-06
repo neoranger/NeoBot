@@ -12,6 +12,7 @@ import os
 import token
 import user
 import feedparser
+import owners
 #import re
 #import logging
 
@@ -64,10 +65,9 @@ Response [{}]
 #######################################
 #Triggers Management Section
 #Adds another trigger-response. ex: "/add Hi / Hi!! :DD"
-owner = [8315361, 5482488]
 @bot.message_handler(commands=['add'])
 def add(m):
-    if (m.from_user.id not in owner):
+    if (m.from_user.id not in owners.owner):
         bot.reply_to(m, 'No tienes permisos')
         return
     if(m.reply_to_message):
@@ -183,7 +183,7 @@ def get_feed(url):
 @bot.message_handler(content_types=['new_chat_participant'])
 def command_new_user(m):
     cid = m.chat.id
-    bot.send_message(cid, '@' + str(m.new_chat_participant.username) + ' Bienvenido!! Te recomendamos usar el comando /Welcome para saber las reglas del grupo.')
+    bot.send_message(cid, 'Bienvenido!!' + '@' + str(m.new_chat_participant.username) + ' al grupo!!')
 
 @bot.message_handler(content_types=['left_chat_participant'])
 def command_left_user(m):
@@ -218,7 +218,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help']) 
 def command_ayuda(m): 
     cid = m.chat.id 
-    bot.send_message( cid, "Comandos Disponibles: /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /vicman\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /roll\n /time\n /blogroll\n /format\n /fuckyou\n /arch\n /tuxamigos\n /note\n /acerca\n /help\n") #
+    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /vicman\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /roll\n /time\n /blogroll\n /format\n /fuckyou\n /arch\n /tuxamigos\n /note\n /id\n /acerca\n /help\n") #
 
 @bot.message_handler(commands=['hola']) 
 def command_hola(m): 
@@ -347,8 +347,12 @@ def command_fede(m):
 
 @bot.message_handler(commands=['welcome']) 
 def command_welcome(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/welcome.jpg', 'rb'))
+    if (m.from_group.id == owner):
+        cid = m.chat.id
+        bot.send_photo( cid, open( './imagenes/welcome.jpg', 'rb'))
+    else:
+        bot.reply_to(m, 'Este comando es exclusivo de otro grupo')
+        return    
 
 @bot.message_handler(commands=['tabla']) 
 def command_tabla(m): 
