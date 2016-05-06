@@ -64,12 +64,12 @@ Response [{}]
 #######################################
 #Triggers Management Section
 #Adds another trigger-response. ex: "/add Hi / Hi!! :DD"
+owner = [8315361, 5482488]
 @bot.message_handler(commands=['add'])
 def add(m):
-    if (m.from_user.id != owner):
+    if (m.from_user.id not in owner):
         bot.reply_to(m, 'No tienes permisos')
         return
-
     if(m.reply_to_message):
         if(m.reply_to_message.text):
             if(len(m.reply_to_message.text.split()) < 2):
@@ -111,6 +111,9 @@ def add(m):
 
 @bot.message_handler(commands=['del'])
 def delete(m):
+    if (m.from_user.id != owner):
+        bot.reply_to(m, 'No tienes permisos')
+        return    
     if(len(m.text.split()) < 2):
         bot.reply_to(m, 'Bad Arguments')
         return
@@ -407,6 +410,8 @@ def command_id(m):
     username = m.from_user.username
     uid = m.from_user.id
     bot.send_message(cid, "You are: @" + str(username)+ " " + "And your Telegram ID is: " + str(uid))	
+    
+
 
 #@bot.message_handler(commands=['note'])
 #def command_note(m):
