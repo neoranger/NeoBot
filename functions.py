@@ -112,9 +112,10 @@ def add(m):
 
 @bot.message_handler(commands=['del'])
 def delete(m):
-    if (m.from_user.id not in owners.owner):
-        bot.reply_to(m, 'No tienes permisos')
-        return    
+    if (m.chat.id == -1001042117783):
+        if (m.from_user.id not in owners.owner):
+            bot.reply_to(m, 'No tienes permisos')
+            return    
     if(len(m.text.split()) < 2):
         bot.reply_to(m, 'Bad Arguments')
         return
