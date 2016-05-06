@@ -67,9 +67,10 @@ Response [{}]
 #Adds another trigger-response. ex: "/add Hi / Hi!! :DD"
 @bot.message_handler(commands=['add'])
 def add(m):
-    if (m.from_user.id not in owners.owner):
-        bot.reply_to(m, 'No tienes permisos')
-        return
+    if (m.chat.id == -1001042117783):
+        if (m.from_user.id not in owners.owner):
+            bot.reply_to(m, 'No tienes permisos')
+            return
     if(m.reply_to_message):
         if(m.reply_to_message.text):
             if(len(m.reply_to_message.text.split()) < 2):
