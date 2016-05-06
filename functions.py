@@ -65,45 +65,46 @@ Response [{}]
 #Triggers Management Section
 #Adds another trigger-response. ex: "/add Hi / Hi!! :DD"
 @bot.message_handler(commands=['add'])
-def add(m):
-    if(m.reply_to_message):
-        if(m.reply_to_message.text):
-            if(len(m.reply_to_message.text.split()) < 2):
-                bot.reply_to(m, 'Bad Arguments. Try with /add [trigger] / [response]')
+if (m.from_user.username == "NeoRanger"):
+    def add(m):
+        if(m.reply_to_message):
+            if(m.reply_to_message.text):
+                if(len(m.reply_to_message.text.split()) < 2):
+                    bot.reply_to(m, 'Bad Arguments. Try with /add [trigger] / [response]')
                 return
             trigger_word = m.text.split(' ', 1)[1].strip()
             trigger_response = m.reply_to_message.text.strip()
+            else:
+                bot.reply_to(m, 'Only text triggers are supported.')
+            return
         else:
-            bot.reply_to(m, 'Only text triggers are supported.')
+            if(len(m.text.split()) < 2):
+                bot.reply_to(m, 'Bad Arguments. Try with /add [trigger] / [response]')
+                return
+            if(m.text.find(separator, 1) == -1):
+                bot.reply_to(m, 'Separator not found. Try with /add [trigger] / [response]')
+                return
+            rest_text = m.text.split(' ', 1)[1]
+            trigger_word = rest_text.split(separator)[0].strip()
+            trigger_response = rest_text.split(separator, 1)[1].strip()
+            
+        if(len(trigger_word) < 4):
+            bot.reply_to(m, 'Trigger too short. [chars < 4]')
             return
-    else:    
-        if(len(m.text.split()) < 2):
-            bot.reply_to(m, 'Bad Arguments. Try with /add [trigger] / [response]')
+        if(len(trigger_response) < 1):
+            bot.reply_to(m, 'Invalid Response.')
             return
-        if(m.text.find(separator, 1) == -1):
-            bot.reply_to(m, 'Separator not found. Try with /add [trigger] / [response]')
-            return
-        rest_text = m.text.split(' ', 1)[1]
-        trigger_word = rest_text.split(separator)[0].strip()
-        trigger_response = rest_text.split(separator, 1)[1].strip()
-
-    if(len(trigger_word) < 4):
-        bot.reply_to(m, 'Trigger too short. [chars < 4]')
-        return
-    if(len(trigger_response) < 1):
-        bot.reply_to(m, 'Invalid Response.')
-        return
-    if(m.chat.type in ['group', 'supergroup']):
-        if(get_triggers(m.chat.id)):
-            get_triggers(m.chat.id)[trigger_word] = trigger_response
+        if(m.chat.type in ['group', 'supergroup']):
+            if(get_triggers(m.chat.id)):
+                get_triggers(m.chat.id)[trigger_word] = trigger_response
+            else:
+                triggers[str(m.chat.id)] = {trigger_word : trigger_response}
+            msg = added_message.format(trigger_word, trigger_response)
+            bot.reply_to(m, msg)
+            save_triggers()
         else:
-            triggers[str(m.chat.id)] = {trigger_word : trigger_response}
-        msg = added_message.format(trigger_word, trigger_response)
-        bot.reply_to(m, msg)
-        save_triggers()
-    else:
-        if(m.chat.id != '-8861523'):
-            return
+            if(m.chat.id != '-8861523'):
+                return
 
 @bot.message_handler(commands=['del'])
 def delete(m):
@@ -396,6 +397,12 @@ def command_feed(m):
     url = str(m.text).split(None,1)
     print (url)
     bot.send_message(cid, get_feed(url[1]),disable_web_page_preview=True,parse_mode="HTML") 
+    
+@bot.message_handler(commands=['id']) 
+def command_id(m): 
+    cid = m.chat.id 
+    uid = m.from_user.username
+    bot.send_message(cid, "You are: @" + str(uid)+ " " + "And your Telegram ID is: " + str(cid))
 
 #@bot.message_handler(commands=['note'])
 #def command_note(m):
@@ -409,6 +416,7 @@ def command_feed(m):
 #        except IndexError:
 #            bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar. Si no está habilitado para grabar no se moleste en usar el comando" )
 
+###############################################################################
 #Specials functions
 def send_message_checking_permission(m, response):
     cid = m.chat.id
@@ -426,5 +434,5 @@ def response(m):
             for t in trg.keys():
                 if t.lower() in m.text.lower():
                     bot.reply_to(m, trg[t])
-
+###############################################################################
 print('Functions loaded')
