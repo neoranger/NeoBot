@@ -416,6 +416,13 @@ def command_id(m):
     username = m.from_user.username
     uid = m.from_user.id
     bot.send_message(cid, "You are: @" + str(username)+ " " + "And your Telegram ID is: " + str(uid))	
+    
+@bot.message_handler(commands=['support'])
+def command_help(message):
+    markup = types.InlineKeyboardMarkup()
+    itembtnneo = types.InlineKeyboardButton('NeoRanger', url="telegram.me/NeoRanger")
+    markup.row(itembtnneo)
+    bot.send_message(message.chat.id, "Choose one supporter:", reply_markup=markup)
 
 #@bot.message_handler(commands=['note'])
 #def command_note(m):
