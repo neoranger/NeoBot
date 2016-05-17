@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import telebot # Library of API bot.
 from telebot import types # Types from API bot
-import time 
+import time
 import random
 import datetime
 import codecs
@@ -41,17 +41,17 @@ def save_triggers():
     with open('triggers.json', 'w') as f:
         json.dump(triggers, f)
     print('Triggers file saved.')
-    
+
 #Function to get triggers list for a group.
 def get_triggers(group_id):
     if(str(group_id) in triggers.keys()):
         return triggers[str(group_id)]
     else:
         return False
-    
+
 #Function to check if a message is too old(60 seconds) to answer.
 def is_recent(m):
-    return (time.time() - m.date) < 60   
+    return (time.time() - m.date) < 60
 
 
 added_message = '''
@@ -81,7 +81,7 @@ def add(m):
         else:
             bot.reply_to(m, 'Only text triggers are supported.')
             return
-    else:    
+    else:
         if(len(m.text.split()) < 2):
             bot.reply_to(m, 'Bad Arguments. Try with /add [trigger] / [response]')
             return
@@ -115,7 +115,7 @@ def delete(m):
     if (m.chat.id == -1001042117783):
         if (m.from_user.id not in owners.owner):
             bot.reply_to(m, 'No tienes permisos')
-            return    
+            return
     if(len(m.text.split()) < 2):
         bot.reply_to(m, 'Bad Arguments')
         return
@@ -148,7 +148,7 @@ def all(m):
             if(len(trg.keys()) == 0):
                 bot.reply_to(m, 'This group doesn\'t have triggers.')
             else:
-                bot.reply_to(m,'Trigers:\n' + '\n'.join(trg))
+                bot.reply_to(m,'Triggers:\n' + '\n'.join(trg))
         else:
             bot.reply_to(m, 'This group doesn\'t have triggers.')
 
@@ -158,7 +158,7 @@ def all(m):
 #######################################
 #Function for feedparser
 #CODE TAKEN FROM:
-#https://gist.github.com/Jeshwanth/99cf05f4477ab0161349        
+#https://gist.github.com/Jeshwanth/99cf05f4477ab0161349
 def get_feed(url):
     try:
         feed = feedparser.parse(url)
@@ -168,11 +168,11 @@ def get_feed(url):
     y = 5 if y > 5 else y
     if(y < 1):
         return 'Nothing found'
-    lines = ['<b>Feed:</b>'] 
+    lines = ['<b>Feed:</b>']
     for x in range(y):
         lines.append(
         u'-&gt <a href="{1}">{0}</a>.'.format(
-        u'' + feed[ "items" ][x][ "title" ], 
+        u'' + feed[ "items" ][x][ "title" ],
         u'' + feed[ "items" ][x][ "link" ]))
     return u'' + '\n'.join(lines)
 
@@ -190,186 +190,186 @@ def command_new_user(m):
 @bot.message_handler(content_types=['left_chat_participant'])
 def command_left_user(m):
     cid = m.chat.id
-    bot.send_message(cid, '@' + str(m.left_chat_participant.username) + ' Gracias por pasar!! Bye!! ')    
+    bot.send_message(cid, '@' + str(m.left_chat_participant.username) + ' Gracias por pasar!! Bye!! ')
 
 @bot.message_handler(commands=['kick']) # Command
-def command_kick(m): 
+def command_kick(m):
     cid = m.chat.id # Store the user id
     bot.send_photo( cid, open( './imagenes/kick.jpg', 'rb')) # With the 'send_photo()' function we can send any image
 
 @bot.message_handler(commands=['uppercut'])
-def command_uppercut(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/uppercut.jpg', 'rb')) 
+def command_uppercut(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/uppercut.jpg', 'rb'))
 
-@bot.message_handler(commands=['hadouken']) 
-def command_hadouken(m): 
-    cid = m.chat.id 
-    bot.send_document( cid, open( './imagenes/hadouken.gif', 'rb')) 
+@bot.message_handler(commands=['hadouken'])
+def command_hadouken(m):
+    cid = m.chat.id
+    bot.send_document( cid, open( './imagenes/hadouken.gif', 'rb'))
 
-@bot.message_handler(commands=['windowsero']) 
-def command_windowsero(m): 
-    cid = m.chat.id 
+@bot.message_handler(commands=['windowsero'])
+def command_windowsero(m):
+    cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/windowsero.jpg', 'rb'))
 
-@bot.message_handler(commands=['acerca']) 
+@bot.message_handler(commands=['acerca'])
 def command_acerca(m):
-    cid = m.chat.id 
-    bot.send_message( cid, 'Acerca de @RootAdminBot: Creado por NeoRanger - www.neositelinux.com.ar') 
+    cid = m.chat.id
+    bot.send_message( cid, 'Acerca de @RootAdminBot: Creado por NeoRanger - www.neositelinux.com.ar')
 
-@bot.message_handler(commands=['help']) 
-def command_ayuda(m): 
-    cid = m.chat.id 
+@bot.message_handler(commands=['help'])
+def command_ayuda(m):
+    cid = m.chat.id
     bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /vicman\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /roll\n /time\n /blogroll\n /format\n /fuckyou\n /arch\n /tuxamigos\n /note\n /id\n /acerca\n /support\n /help\n") #
 
-@bot.message_handler(commands=['hola']) 
-def command_hola(m): 
-    cid = m.chat.id 
-    bot.send_message( cid, 'Hola, bienvenido!') 
+@bot.message_handler(commands=['hola'])
+def command_hola(m):
+    cid = m.chat.id
+    bot.send_message( cid, 'Hola, bienvenido!')
 
-@bot.message_handler(commands=['hello']) 
-def command_hello(m): 
-    cid = m.chat.id 
-    bot.send_message( cid, 'Hello and welcome!') 
+@bot.message_handler(commands=['hello'])
+def command_hello(m):
+    cid = m.chat.id
+    bot.send_message( cid, 'Hello and welcome!')
 
-@bot.message_handler(commands=['attack']) 
-def command_attack(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/dictionary_attack.jpg', 'rb')) 
+@bot.message_handler(commands=['attack'])
+def command_attack(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/dictionary_attack.jpg', 'rb'))
 
-@bot.message_handler(commands=['nsa']) 
-def command_nsa(m): 
-    cid = m.chat.id 
+@bot.message_handler(commands=['nsa'])
+def command_nsa(m):
+    cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/tiosam.jpg', 'rb'))
 
-@bot.message_handler(commands=['roll']) 
-def command_roll(m): 
-    cid = m.chat.id 
+@bot.message_handler(commands=['roll'])
+def command_roll(m):
+    cid = m.chat.id
     bot.send_message( cid, random.randint(1,6) )
 
 @bot.message_handler(commands=['time'])
-def command_time(m): 
-    cid = m.chat.id 
-    bot.send_message( cid, str(datetime.datetime.now())) 
+def command_time(m):
+    cid = m.chat.id
+    bot.send_message( cid, str(datetime.datetime.now()))
 
-@bot.message_handler(commands=['blogroll']) 
-def command_blogroll(m): 
-    cid = m.chat.id 
-    bot.send_message( cid, 'BlogRoll: https://pad.riseup.net/p/blogroll') 
+@bot.message_handler(commands=['blogroll'])
+def command_blogroll(m):
+    cid = m.chat.id
+    bot.send_message( cid, 'BlogRoll: https://pad.riseup.net/p/blogroll')
 
-@bot.message_handler(commands=['gentoo']) 
-def command_gentoo(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/gentoo.jpg', 'rb')) 
+@bot.message_handler(commands=['gentoo'])
+def command_gentoo(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/gentoo.jpg', 'rb'))
 
-@bot.message_handler(commands=['vicman']) 
-def command_vicman(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/vicman2.jpg', 'rb')) 
+@bot.message_handler(commands=['vicman'])
+def command_vicman(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/vicman2.jpg', 'rb'))
 
-@bot.message_handler(commands=['tuxamigos']) 
-def command_tuxamigos(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/tuxamigos.jpg', 'rb')) 
+@bot.message_handler(commands=['tuxamigos'])
+def command_tuxamigos(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/tuxamigos.jpg', 'rb'))
 
-@bot.message_handler(commands=['deletethat']) 
-def command_deletethat(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/deletethat.jpg', 'rb')) 
+@bot.message_handler(commands=['deletethat'])
+def command_deletethat(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/deletethat.jpg', 'rb'))
 
-@bot.message_handler(commands=['flame']) 
-def command_flame(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/popcorn.jpg', 'rb')) 
+@bot.message_handler(commands=['flame'])
+def command_flame(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/popcorn.jpg', 'rb'))
 
-@bot.message_handler(commands=['stallman']) 
-def command_stallman(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/dancingstallman.jpg', 'rb')) 
+@bot.message_handler(commands=['stallman'])
+def command_stallman(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/dancingstallman.jpg', 'rb'))
 
-@bot.message_handler(commands=['ok']) 
-def command_ok(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/ok.jpg', 'rb')) 
+@bot.message_handler(commands=['ok'])
+def command_ok(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/ok.jpg', 'rb'))
 
-@bot.message_handler(commands=['coding']) 
-def command_coding(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/coding.jpg', 'rb')) 
+@bot.message_handler(commands=['coding'])
+def command_coding(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/coding.jpg', 'rb'))
 
-@bot.message_handler(commands=['nelson']) 
-def command_nelson(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/nelson.jpg', 'rb')) 
+@bot.message_handler(commands=['nelson'])
+def command_nelson(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/nelson.jpg', 'rb'))
 
-@bot.message_handler(commands=['yes']) 
-def command_fuckyeah(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/fuckyeah.jpg', 'rb')) 
+@bot.message_handler(commands=['yes'])
+def command_fuckyeah(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/fuckyeah.jpg', 'rb'))
 
-@bot.message_handler(commands=['spoiler']) 
-def command_spoiler(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/spoileralert.jpg', 'rb')) 
+@bot.message_handler(commands=['spoiler'])
+def command_spoiler(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/spoileralert.jpg', 'rb'))
 
-@bot.message_handler(commands=['viernes']) 
-def command_viernes(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/viernes.jpg', 'rb')) 
+@bot.message_handler(commands=['viernes'])
+def command_viernes(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/viernes.jpg', 'rb'))
 
-@bot.message_handler(commands=['kde']) 
-def command_kde(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/kderock.jpg', 'rb')) 
+@bot.message_handler(commands=['kde'])
+def command_kde(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/kderock.jpg', 'rb'))
 
-@bot.message_handler(commands=['esssta']) 
-def command_esssta(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/esssta.jpg', 'rb')) 
+@bot.message_handler(commands=['esssta'])
+def command_esssta(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/esssta.jpg', 'rb'))
 
-@bot.message_handler(commands=['what']) 
-def command_what(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/what.jpg', 'rb')) 
+@bot.message_handler(commands=['what'])
+def command_what(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/what.jpg', 'rb'))
 
-@bot.message_handler(commands=['vegetta']) 
-def command_vegetta(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/vegetta.jpg', 'rb')) 
+@bot.message_handler(commands=['vegetta'])
+def command_vegetta(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/vegetta.jpg', 'rb'))
 
-@bot.message_handler(commands=['litrona']) 
-def command_litrona(m): 
-    cid = m.chat.id 
-    bot.send_photo( cid, open( './imagenes/litrona.jpg', 'rb')) 
+@bot.message_handler(commands=['litrona'])
+def command_litrona(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/litrona.jpg', 'rb'))
 
-@bot.message_handler(commands=['fede']) 
-def command_fede(m): 
-    cid = m.chat.id 
+@bot.message_handler(commands=['fede'])
+def command_fede(m):
+    cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/fede.jpg', 'rb'))
 
-@bot.message_handler(commands=['welcome']) 
-def command_welcome(m): 
+@bot.message_handler(commands=['welcome'])
+def command_welcome(m):
     if (m.chat.id == -1001042117783):
         cid = m.chat.id
         bot.send_photo( cid, open( './imagenes/welcome.jpg', 'rb'))
     else:
         bot.reply_to(m, 'Este comando es exclusivo de otro grupo')
-        return    
+        return
 
-@bot.message_handler(commands=['tabla']) 
-def command_tabla(m): 
-    cid = m.chat.id 
+@bot.message_handler(commands=['tabla'])
+def command_tabla(m):
+    cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/tabla.jpg', 'rb'))
 
-@bot.message_handler(commands=['takataka']) 
-def command_taka(m): 
-    cid = m.chat.id 
+@bot.message_handler(commands=['takataka'])
+def command_taka(m):
+    cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/takataka.jpg', 'rb'))
 
-@bot.message_handler(commands=['ubuntu']) 
-def command_ubuntu(m): 
-    cid = m.chat.id 
-    bot.send_message( cid, 'http://www.youtube.com/watch?v=xK-_OdlCGBg') 
+@bot.message_handler(commands=['ubuntu'])
+def command_ubuntu(m):
+    cid = m.chat.id
+    bot.send_message( cid, 'http://www.youtube.com/watch?v=xK-_OdlCGBg')
 
 @bot.message_handler(commands=['kill'])
 def command_kill(m):
@@ -388,35 +388,35 @@ def command_format(m):
     except Exception:
         bot.send_message( cid, "Invalid argument" )
 
-@bot.message_handler(commands=['maestruli']) 
-def command_maestruli(m): 
-    cid = m.chat.id 
-    bot.send_document( cid, open( './imagenes/maestruli.mp4', 'rb')) 
+@bot.message_handler(commands=['maestruli'])
+def command_maestruli(m):
+    cid = m.chat.id
+    bot.send_document( cid, open( './imagenes/maestruli.mp4', 'rb'))
 
-@bot.message_handler(commands=['fuckyou']) 
-def command_fuckyou(m): 
-    cid = m.chat.id 
-    bot.send_document( cid, open( './imagenes/fuckyou.mp4', 'rb')) 
+@bot.message_handler(commands=['fuckyou'])
+def command_fuckyou(m):
+    cid = m.chat.id
+    bot.send_document( cid, open( './imagenes/fuckyou.mp4', 'rb'))
 
 @bot.message_handler(commands=['arch'])
 def command_arch(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/arch.jpg', 'rb'))
 
-@bot.message_handler(commands=['feed']) 
-def command_feed(m): 
+@bot.message_handler(commands=['feed'])
+def command_feed(m):
     cid = m.chat.id
     url = str(m.text).split(None,1)
     print (url)
-    bot.send_message(cid, get_feed(url[1]),disable_web_page_preview=True,parse_mode="HTML") 
-    
-@bot.message_handler(commands=['id']) 
-def command_id(m): 
-    cid = m.chat.id 
+    bot.send_message(cid, get_feed(url[1]),disable_web_page_preview=True,parse_mode="HTML")
+
+@bot.message_handler(commands=['id'])
+def command_id(m):
+    cid = m.chat.id
     username = m.from_user.username
     uid = m.from_user.id
-    bot.send_message(cid, "You are: @" + str(username)+ " " + "And your Telegram ID is: " + str(uid))	
-    
+    bot.send_message(cid, "You are: @" + str(username)+ " " + "And your Telegram ID is: " + str(uid))
+
 @bot.message_handler(commands=['support'])
 def command_help(message):
     markup = types.InlineKeyboardMarkup()
