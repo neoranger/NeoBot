@@ -3,7 +3,9 @@ NeoBot
 
 Telegram Bot just for fun. You can add the bot @RootAdminBot for test.
 
-Use the command /help to know all the commands on the bot
+Use the command /support to contact me.
+
+Use the command /help to know all the available commands.
 
 You can contact me: neoranger@openmailbox.org
 
