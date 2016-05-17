@@ -152,6 +152,10 @@ def all(m):
         else:
             bot.reply_to(m, 'This group doesn\'t have triggers.')
 
+def format_list(list, cols=2):
+    for i in range(0, len(list), cols):
+        return '\n'.join(["\t".join(list[i:i+cols])])
+
 #End Triggers Management Section
 #######################################
 
