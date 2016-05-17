@@ -65,6 +65,10 @@ Response [{}]
 #######################################
 #Triggers Management Section
 #Adds another trigger-response. ex: "/add Hi / Hi!! :DD"
+def format_list(list, cols=2):
+    for i in range(0, len(list), cols):
+        return '\n'.join(["\t".join(list[i:i+cols])])
+
 @bot.message_handler(commands=['add'])
 def add(m):
     if (m.chat.id == -1001042117783):
@@ -151,10 +155,6 @@ def all(m):
                 bot.reply_to(m,'Triggers:\n' + format_list(trg))
         else:
             bot.reply_to(m, 'This group doesn\'t have triggers.')
-
-def format_list(list, cols=2):
-    for i in range(0, len(list), cols):
-        return '\n'.join(["\t".join(list[i:i+cols])])
 
 #End Triggers Management Section
 #######################################
