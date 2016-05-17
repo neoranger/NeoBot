@@ -7,4 +7,4 @@ Use the command /help to know all the commands on the bot
 
 You can contact me: neoranger@openmailbox.org
 
-Thanks to @sniferl4bs (Telegram), @sanguchi (Telegram) for the help
+Thanks to @sniferl4bs (Telegram), @sanguchi (Telegram), @rawBasic(Telegram) for the help
