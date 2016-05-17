@@ -148,7 +148,7 @@ def all(m):
             if(len(trg.keys()) == 0):
                 bot.reply_to(m, 'This group doesn\'t have triggers.')
             else:
-                bot.reply_to(m,'Triggers:\n' + '\n'.join(trg))
+                bot.reply_to(m,'Triggers:\n' + format_list(trg))
         else:
             bot.reply_to(m, 'This group doesn\'t have triggers.')
 
