@@ -92,9 +92,10 @@ def add(m):
         if(m.text.find(separator, 1) == -1):
             bot.reply_to(m, 'Separator not found. Try with /add [trigger] / [response]')
             return
-        rest_text = m.text.split(' ', 1)[1]
-        trigger_word = rest_text.split(separator)[0].strip()
-        trigger_response = rest_text.split(separator, 1)[1].strip()
+		rest_text_unencoded = m.text.split(' ', 1)[1]
+		rest_text = rest_text_unencoded.encode('utf-8')
+		trigger_word = rest_text.split(separator)[0].strip()
+		trigger_response = rest_text.split(separator, 1)[1].strip()
 
     if(len(trigger_word) < 4):
         bot.reply_to(m, 'Trigger too short. [chars < 4]')
@@ -173,12 +174,15 @@ def get_feed(url):
     if(y < 1):
         return 'Nothing found'
     lines = ['<b>Feed:</b>']
-    for x in range(y):
-        lines.append(
-        u'-&gt <a href="{1}">{0}</a>.'.format(
-        u'' + feed[ "items" ][x][ "title" ],
-        u'' + feed[ "items" ][x][ "link" ]))
-    return u'' + '\n'.join(lines)
+	for x in range(y):
+		lines.append('- [{}]({})'.format(feed['items'][x]['title'].replace(']', ':').replace('[', '').encode('utf-8'), feed['items'][x]['link']))
+	return '\n'.join(lines)    
+#    for x in range(y):
+#        lines.append(
+#        u'-&gt <a href="{1}">{0}</a>.'.format(
+#        u'' + feed[ "items" ][x][ "title" ],
+#        u'' + feed[ "items" ][x][ "link" ]))
+#    return u'' + '\n'.join(lines)
 
 #######################################
 
