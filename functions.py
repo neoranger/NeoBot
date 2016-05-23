@@ -174,15 +174,15 @@ def get_feed(url):
     if(y < 1):
         return 'Nothing found'
     lines = ['<b>Feed:</b>']
-	for x in range(y):
-		lines.append('- [{}]({})'.format(feed['items'][x]['title'].replace(']', ':').replace('[', '').encode('utf-8'), feed['items'][x]['link']))
-	return '\n'.join(lines)    
 #    for x in range(y):
-#        lines.append(
-#        u'-&gt <a href="{1}">{0}</a>.'.format(
-#        u'' + feed[ "items" ][x][ "title" ],
-#        u'' + feed[ "items" ][x][ "link" ]))
-#    return u'' + '\n'.join(lines)
+#		lines.append('- [{}]({})'.format(feed['items'][x]['title'].replace(']', ':').replace('[', '').encode('utf-8'), feed['items'][x]['link']))
+#	return '\n'.join(lines)
+    for x in range(y):
+        lines.append(
+        u'-&gt <a href="{1}">{0}</a>.'.format(
+        u'' + feed[ "items" ][x][ "title" ],
+        u'' + feed[ "items" ][x][ "link" ]))
+    return u'' + '\n'.join(lines)
 
 #######################################
 
