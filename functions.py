@@ -273,7 +273,7 @@ def command_gentoo(m):
 @bot.message_handler(commands=['vicman'])
 def command_vicman(m):
     cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/vicman2.jpg', 'rb'))
+    bot.send_photo( cid, open( './imagenes/vicman.jpg', 'rb'))
 
 @bot.message_handler(commands=['tuxamigos'])
 def command_tuxamigos(m):
