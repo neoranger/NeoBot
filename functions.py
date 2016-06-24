@@ -436,6 +436,7 @@ def command_help(message):
     itembtnneo = types.InlineKeyboardButton('NeoRanger', url="telegram.me/NeoRanger")
     itembtnrepo = types.InlineKeyboardButton('Repo Github', url="http://github.com/neoranger/NeoBot")
     markup.row(itembtnneo)
+    markup.row(itembtnrepo)
     bot.send_message(message.chat.id, "Choose one supporter:", reply_markup=markup)
 
 @bot.message_handler(commands=['note'])
@@ -463,7 +464,10 @@ def command_deal(m):
 @bot.message_handler(commands=['blog'])
 def command_blog(m):
     cid = m.chat.id
-    busqueda = 'http://www.neositelinux.com.ar/search/%s/feed/rss'
+    if cid == -1001042117783:
+        busqueda = 'http://kernelpanicblog.wordpress.com/search/%s/feed/rss'
+    else:
+        busqueda = 'http://www.neositelinux.com.ar/search/%s/feed/rss'
     url = (busqueda % m.text.split()[1])
     try:
         bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="HTML")
