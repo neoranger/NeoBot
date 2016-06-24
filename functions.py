@@ -462,7 +462,12 @@ def command_deal(m):
 @bot.message_handler(commands=['/blog'])
 def command_blog(m):
     cid = m.chat.id
-    busqueda = 'http://www.neositelinux.com.ar/search/' + str(m.text.split()[1]) + '/fedd/rss'
+    palabra = m.text.split()
+    if (len(palabra)>=2):
+        palabra.pop(0)
+        nombre = ' '.join(palabra)
+        
+    busqueda = 'http://www.neositelinux.com.ar/search/' + palabra + '/fedd/rss2'
     try:
         bot.send_message( cid, busqueda)
     except IndexError:
