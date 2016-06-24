@@ -434,6 +434,7 @@ def command_id(m):
 def command_help(message):
     markup = types.InlineKeyboardMarkup()
     itembtnneo = types.InlineKeyboardButton('NeoRanger', url="telegram.me/NeoRanger")
+    itembtnrepo = types.InlineKeyboardButton('Repo Github', url="http://github.com/neoranger/NeoBot")
     markup.row(itembtnneo)
     bot.send_message(message.chat.id, "Choose one supporter:", reply_markup=markup)
 
@@ -462,9 +463,10 @@ def command_deal(m):
 @bot.message_handler(commands=['blog'])
 def command_blog(m):
     cid = m.chat.id
-    busqueda = 'http://www.neositelinux.com.ar/search/%s/fedd/rss'
+    busqueda = 'http://www.neositelinux.com.ar/search/%s/feed/rss'
+    url = (busqueda % m.text.split()[1])
     try:
-        bot.send_message( cid, busqueda % m.text.split()[1])
+        bot.send_message(cid, get_feed(url[1]),disable_web_page_preview=True,parse_mode="HTML")
     except IndexError:
         bot.send_message( cid, "Missing Argument" )
 
