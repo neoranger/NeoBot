@@ -462,16 +462,11 @@ def command_deal(m):
 @bot.message_handler(commands=['/blog'])
 def command_blog(m):
     cid = m.chat.id
-    palabra = m.text.split()
-    if (len(palabra)>=2):
-        palabra.pop(0)
-        nombre = ' '.join(palabra)
-        
-    busqueda = 'http://www.neositelinux.com.ar/search/' + palabra + '/fedd/rss2'
+    busqueda = 'http://www.neositelinux.com.ar/search/%s/fedd/rss'
     try:
-        bot.send_message( cid, busqueda)
+        bot.send_message( cid, busqueda % m.text.split()[1])
     except IndexError:
-        bot.send_message( cid, "Argument missing" )
+        bot.send_message( cid, "Missing Argument" )
 
 ###############################################################################
 #Specials functions
