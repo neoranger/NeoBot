@@ -459,7 +459,7 @@ def command_deal(m):
     cid = m.chat.id
     bot.send_document( cid, open( './imagenes/deal.mp4', 'rb'))
     
-@bot.message_handler(commands=['/blog'])
+@bot.message_handler(commands=['blog'])
 def command_blog(m):
     cid = m.chat.id
     busqueda = 'http://www.neositelinux.com.ar/search/%s/fedd/rss'
