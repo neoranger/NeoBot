@@ -466,7 +466,7 @@ def command_blog(m):
     busqueda = 'http://www.neositelinux.com.ar/search/%s/feed/rss'
     url = (busqueda % m.text.split()[1])
     try:
-        bot.send_message(cid, get_feed(url[1]),disable_web_page_preview=True,parse_mode="HTML")
+        bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="HTML")
     except IndexError:
         bot.send_message( cid, "Missing Argument" )
 
