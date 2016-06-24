@@ -454,6 +454,11 @@ def command_note(m):
         bot.reply_to(m, 'Sorry, this command is exclusive. Just the owner can use it.')
         return
 
+@bot.message_handler(commands=['deal'])
+def command_deal(m):
+    cid = m.chat.id
+    bot.send_document( cid, open( './imagenes/deal.mp4', 'rb'))
+
 ###############################################################################
 #Specials functions
 def send_message_checking_permission(m, response):
