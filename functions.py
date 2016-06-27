@@ -464,7 +464,7 @@ def command_deal(m):
 @bot.message_handler(commands=['blog'])
 def command_blog(m):
     cid = m.chat.id
-    if cid == -1001030218798:
+    if (cid == -1001030218798):
         busqueda = 'http://kernelpanicblog.wordpress.com/search/%s/feed/rss'
     else:
         busqueda = 'http://www.neositelinux.com.ar/search/%s/feed/rss'
