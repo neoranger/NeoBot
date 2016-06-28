@@ -173,7 +173,7 @@ def get_feed(url):
     y = 5 if y > 5 else y
     if(y < 1):
         return 'Nothing found'
-    lines = ['<b>Feed:</b>']
+    lines = ['*Feed:*']
     for x in range(y):
         lines.append('- [{}]({})'.format(feed['items'][x]['title'].replace(']', ':').replace('[', '').encode('utf-8'), feed['items'][x]['link']))
     return '\n'.join(lines)
@@ -487,7 +487,7 @@ def command_blog(m):
         palabras.pop(0)
         a_buscar = '+'.join(palabras)
         url = (busqueda % a_buscar)
-        bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="HTML")
+        bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
     else:
         bot.send_message( cid, "Missing Argument" )
         
