@@ -481,10 +481,12 @@ def command_blog(m):
         busqueda = 'http://kernelpanicblog.wordpress.com/search/%s/feed/rss'
     else:
         busqueda = 'http://www.neositelinux.com.ar/search/%s/feed/rss'
-    palabras = m.text.split()
-    palabras.pop(0)
-    a_buscar = '+'.join(palabras)
-    url = (busqueda % a_buscar)
+    
+    if len(m.text.split()) >= 2:
+        palabras = m.text.split()
+        palabras.pop(0)
+        a_buscar = '+'.join(palabras)
+        url = (busqueda % a_buscar)
     try:
         bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="HTML")
     except IndexError:
