@@ -482,7 +482,7 @@ def command_blog(m):
     else:
         busqueda = 'http://www.neositelinux.com.ar/search/%s/feed/rss'
     
-    if len(m.text.split()) >= 2:
+    if len(m.text.split()) > 2:
         palabras = m.text.split()
         palabras.pop(0)
         a_buscar = '+'.join(palabras)
