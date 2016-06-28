@@ -461,6 +461,19 @@ def command_deal(m):
     cid = m.chat.id
     bot.send_document( cid, open( './imagenes/deal.mp4', 'rb'))
     
+# @bot.message_handler(commands=['blog'])
+# def command_blog(m):
+#     cid = m.chat.id
+#     if (cid == -1001030218798):
+#         busqueda = 'http://kernelpanicblog.wordpress.com/search/%s/feed/rss'
+#     else:
+#         busqueda = 'http://www.neositelinux.com.ar/search/%s/feed/rss'
+#     url = (busqueda % m.text.split()[1])
+#     try:
+#         bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="HTML")
+#     except IndexError:
+#         bot.send_message( cid, "Missing Argument" )
+
 @bot.message_handler(commands=['blog'])
 def command_blog(m):
     cid = m.chat.id
@@ -468,7 +481,10 @@ def command_blog(m):
         busqueda = 'http://kernelpanicblog.wordpress.com/search/%s/feed/rss'
     else:
         busqueda = 'http://www.neositelinux.com.ar/search/%s/feed/rss'
-    url = (busqueda % m.text.split()[1])
+    palabras = m.text.split()
+    palabras.pop(0)
+    a_buscar = '+'.join(palabras)
+    url = (busqueda % a_buscar)
     try:
         bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="HTML")
     except IndexError:
