@@ -421,7 +421,7 @@ def command_feed(m):
     cid = m.chat.id
     url = str(m.text).split(None,1)
     print (url)
-    bot.send_message(cid, get_feed(url.replace("[","").replace("]",":")[1]),disable_web_page_preview=True,parse_mode="HTML")
+    bot.send_message(cid, get_feed(url[1]),disable_web_page_preview=True,parse_mode="HTML")
 
 @bot.message_handler(commands=['id'])
 def command_id(m):
