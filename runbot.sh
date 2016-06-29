@@ -1,7 +1,7 @@
 #!/bin/bash
 while true
 do
-python infosertec_bot.py
+python neobot.py
 echo "¡The bot is crashed!"
 echo "Rebooting in:"
 for i in 1
