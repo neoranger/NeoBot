@@ -228,7 +228,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
     cid = m.chat.id
-    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /vicman\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /time\n /blogroll\n /format\n /fuckyou\n /arch\n /tuxamigos\n /deal\n /blog\n /programador\n /boom\n /note\n /id\n /acerca\n /support\n /help\n") #
+    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /vicman\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /time\n /blogroll\n /format\n /fuckyou\n /arch\n /tuxamigos\n /deal\n /blog\n /programador\n /boom\n /windowseros\n /friends\n /note\n /id\n /acerca\n /support\n /help\n") #
 
 @bot.message_handler(commands=['hola'])
 def command_hola(m):
@@ -502,6 +502,16 @@ def command_dev(m):
 def command_boom(m):
     cid = m.chat.id
     bot.send_document( cid, open( './imagenes/mindblown.mp4', 'rb'))
+
+@bot.message_handler(commands=['windowseros'])
+def command_windowseros(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/nohaywindowseros.jpg', 'rb'))
+
+@bot.message_handler(commands=['friends'])
+def command_friends(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/friends.jpg', 'rb'))
 
 ###############################################################################
 #Specials functions
