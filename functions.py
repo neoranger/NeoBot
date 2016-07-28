@@ -153,7 +153,7 @@ def all(m):
             if(len(trg.keys()) == 0):
                 bot.reply_to(m, 'This group doesn\'t have triggers.')
             else:
-                bot.reply_to(m,'Triggers:\n' + str('\n'.join(trg)))
+                bot.reply_to(m, 'Triggers:\n' + str('\n'.join(trg)))
         else:
             bot.reply_to(m, 'This group doesn\'t have triggers.')
 
@@ -193,12 +193,12 @@ def get_feed(url):
 @bot.message_handler(content_types=['new_chat_member'])
 def command_new_user(m):
     cid = m.chat.id
-    bot.send_message(cid, 'Bienvenido!!' + '@' + str(m.new_chat_participant.username) + ' al grupo!!')
+    bot.send_message(cid, 'Bienvenido!!' + '@' + str(m.new_chat_member.username) + ' al grupo!!')
 
 @bot.message_handler(content_types=['left_chat_member'])
 def command_left_user(m):
     cid = m.chat.id
-    bot.send_message(cid, '@' + str(m.left_chat_participant.username) + ' Gracias por pasar!! Bye!! ')
+    bot.send_message(cid, '@' + str(m.left_chat_member.username) + ' Gracias por pasar!! Bye!! ')
 
 @bot.message_handler(commands=['kick']) # Command
 def command_kick(m):
@@ -434,27 +434,29 @@ def command_id(m):
 def command_help(message):
     markup = types.InlineKeyboardMarkup()
     itembtnneo = types.InlineKeyboardButton('NeoRanger', url="telegram.me/NeoRanger")
+    itembtnblog = types.InlineKeyboardButton('URL Blog', url="http://www.neositelinux.com.ar")
     itembtnrepo = types.InlineKeyboardButton('Repo Github', url="http://github.com/neoranger/NeoBot")
     markup.row(itembtnneo)
+    markup.row(itembtnblog)
     markup.row(itembtnrepo)
     bot.send_message(message.chat.id, "Choose one supporter:", reply_markup=markup)
 
-@bot.message_handler(commands=['note'])
-def command_note(m):
-    cid = m.chat.id
-    string_array = str(m.text).split(None,1)
-    if (m.chat.id == 5482488):
-        grabo_nota = (codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1]))
-        send_message_checking_permission(m, grabo_nota)
-        if string_array[0] == "/note" and user.user_id == cid:
-            try:
-                grabo_nota = (codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1]))
-                send_message_checking_permission(m, grabo_nota)
-            except IndexError:
-                bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar. Si no está habilitado para grabar no se moleste en usar el comando" )
-    else:
-        bot.reply_to(m, 'Sorry, this command is exclusive. Just the owner can use it.')
-        return
+# @bot.message_handler(commands=['note'])
+# def command_note(m):
+#     cid = m.chat.id
+#     string_array = str(m.text).split(None,1)
+#     if (m.chat.id == 5482488):
+#         grabo_nota = (codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1]))
+#         send_message_checking_permission(m, grabo_nota)
+#         if string_array[0] == "/note" and user.user_id == cid:
+#             try:
+#                 grabo_nota = (codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1]))
+#                 send_message_checking_permission(m, grabo_nota)
+#             except IndexError:
+#                 bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar. Si no está habilitado para grabar no se moleste en usar el comando" )
+#     else:
+#         bot.reply_to(m, 'Sorry, this command is exclusive. Just the owner can use it.')
+#         return
 
 @bot.message_handler(commands=['deal'])
 def command_deal(m):
