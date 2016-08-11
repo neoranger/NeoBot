@@ -14,7 +14,7 @@ import user
 import feedparser
 import owners
 #import re
-#import logging
+import logging
 
 TOKEN = token.token_id
 bot = telebot.TeleBot(TOKEN) # Creating our bot object.
@@ -193,7 +193,7 @@ def get_feed(url):
 @bot.message_handler(content_types=['new_chat_member'])
 def command_new_user(m):
     cid = m.chat.id
-    bot.send_message(cid, 'Bienvenido!!' + '@' + str(m.new_chat_member.username) + ' al grupo!!')
+    bot.send_message(cid, 'Bienvenido!!' + ' ' + '@' + str(m.new_chat_member.username) + ' al grupo!!')
 
 @bot.message_handler(content_types=['left_chat_member'])
 def command_left_user(m):
