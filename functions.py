@@ -228,7 +228,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
     cid = m.chat.id
-    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /vicman\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /time\n /blogroll\n /format\n /fuckyou\n /arch\n /tuxamigos\n /deal\n /blog\n /programador\n /boom\n /windowseros\n /friends\n /note\n /id\n /acerca\n /support\n /help\n") #
+    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /vicman\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /time\n /format\n /fuckyou\n /arch\n /tuxamigos\n /deal\n /blog\n /programador\n /boom\n /windowseros\n /friends\n /note\n /id\n /acerca\n /support\n /help\n") #
 
 @bot.message_handler(commands=['hola'])
 def command_hola(m):
@@ -259,11 +259,6 @@ def command_roll(m):
 def command_time(m):
     cid = m.chat.id
     bot.send_message( cid, str(datetime.datetime.now()))
-
-@bot.message_handler(commands=['blogroll'])
-def command_blogroll(m):
-    cid = m.chat.id
-    bot.send_message( cid, 'BlogRoll: https://pad.riseup.net/p/blogroll')
 
 @bot.message_handler(commands=['gentoo'])
 def command_gentoo(m):
@@ -512,6 +507,11 @@ def command_windowseros(m):
 def command_friends(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/friends.jpg', 'rb'))
+
+@bot.message_handler(commands=['apache'])
+def command_apache(m):
+    cid = m.chat.id
+    bot.send_document( cid, open( '/home/neoranger/scripts_vps/apache2.conf', 'rb'))
 
 ###############################################################################
 #Specials functions
