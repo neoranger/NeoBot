@@ -223,7 +223,7 @@ def command_windowsero(m):
 @bot.message_handler(commands=['acerca'])
 def command_acerca(m):
     cid = m.chat.id
-    bot.send_message( cid, 'Acerca de @RootAdminBot: Creado por NeoRanger - www.neositelinux.com.ar')
+    bot.send_message( cid, 'Acerca de @RootAdminBot: Creado por NeoRanger - www.neositelinux.com')
 
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
