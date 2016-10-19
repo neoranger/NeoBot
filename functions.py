@@ -464,7 +464,7 @@ def command_deal(m):
 #     if (cid == -1001030218798):
 #         busqueda = 'http://kernelpanicblog.wordpress.com/search/%s/feed/rss'
 #     else:
-#         busqueda = 'http://www.neositelinux.com.ar/search/%s/feed/rss'
+#         busqueda = 'http://www.neositelinux.com/search/%s/feed/rss'
 #     url = (busqueda % m.text.split()[1])
 #     try:
 #         bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="HTML")
@@ -477,7 +477,7 @@ def command_blog(m):
     if (cid == -1001030218798):
         busqueda = 'http://kernelpanicblog.wordpress.com/search/%s/feed/rss'
     else:
-        busqueda = 'http://www.neositelinux.com.ar/search/%s/feed/rss'
+        busqueda = 'http://www.neositelinux.com/search/%s/feed/rss'
     
     if len(m.text.split()) >= 2:
         palabras = m.text.split()
