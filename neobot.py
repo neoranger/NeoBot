@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import functions
-import download_function
+#import download_function
 
 #Listener
 def listener(messages):
@@ -15,4 +15,4 @@ functions.bot.set_update_listener(listener)
 #Bot starts here
 print('Bot Started')
 functions.bot.polling(none_stop=True)
-download_funtion.polling(none_stop=True)
+#download_funtion.polling(none_stop=True)

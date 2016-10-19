@@ -429,7 +429,7 @@ def command_id(m):
 def command_help(message):
     markup = types.InlineKeyboardMarkup()
     itembtnneo = types.InlineKeyboardButton('NeoRanger', url="telegram.me/NeoRanger")
-    itembtnblog = types.InlineKeyboardButton('URL Blog', url="http://www.neositelinux.com.ar")
+    itembtnblog = types.InlineKeyboardButton('URL Blog', url="http://www.neositelinux.com")
     itembtnrepo = types.InlineKeyboardButton('Repo Github', url="http://github.com/neoranger/NeoBot")
     markup.row(itembtnneo)
     markup.row(itembtnblog)
