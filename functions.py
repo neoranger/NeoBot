@@ -229,7 +229,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
     cid = m.chat.id
-    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /vicman\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /time\n /format\n /fuckyou\n /arch\n /tuxamigos\n /deal\n /blog\n /neofeed\n /manjarofeed\n /kdefeed\n /wiki\n /programador\n /boom\n /windowseros\n /friends\n /note\n /id\n /acerca\n /support\n /help\n /bot_update\n") #
+    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /format\n /fuckyou\n /arch\n /deal\n /blog\n /neofeed\n /manjarofeed\n /kdefeed\n /wiki\n /programador\n /boom\n /windowseros\n /friends\n /note\n /id\n /acerca\n /support\n /help\n /bot_update\n") #
 
 @bot.message_handler(commands=['hola'])
 def command_hola(m):
@@ -256,25 +256,25 @@ def command_roll(m):
     cid = m.chat.id
     bot.send_message( cid, random.randint(1,6) )
 
-@bot.message_handler(commands=['time'])
-def command_time(m):
-    cid = m.chat.id
-    bot.send_message( cid, str(datetime.datetime.now()))
+# @bot.message_handler(commands=['time'])
+# def command_time(m):
+#     cid = m.chat.id
+#     bot.send_message( cid, str(datetime.datetime.now()))
 
 @bot.message_handler(commands=['gentoo'])
 def command_gentoo(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/gentoo.jpg', 'rb'))
 
-@bot.message_handler(commands=['vicman'])
-def command_vicman(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/vicman.jpg', 'rb'))
+# @bot.message_handler(commands=['vicman'])
+# def command_vicman(m):
+#     cid = m.chat.id
+#     bot.send_photo( cid, open( './imagenes/vicman.jpg', 'rb'))
 
-@bot.message_handler(commands=['tuxamigos'])
-def command_tuxamigos(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/tuxamigos.jpg', 'rb'))
+# @bot.message_handler(commands=['tuxamigos'])
+# def command_tuxamigos(m):
+#     cid = m.chat.id
+#     bot.send_photo( cid, open( './imagenes/tuxamigos.jpg', 'rb'))
 
 @bot.message_handler(commands=['deletethat'])
 def command_deletethat(m):
@@ -490,7 +490,7 @@ def command_blog(m):
         bot.send_message( cid, "Missing Argument" )
         
 @bot.message_handler(commands=['wiki'])
-def command_blog(m):
+def command_wiki(m):
     cid = m.chat.id
     busqueda = 'https://wiki.manjaro.org/index.php?search=%s'
     
