@@ -15,6 +15,7 @@ import feedparser
 import owners
 #import re
 import logging
+import commands
 
 TOKEN = token.token_id
 bot = telebot.TeleBot(TOKEN) # Creating our bot object.
@@ -228,7 +229,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
     cid = m.chat.id
-    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /vicman\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /time\n /format\n /fuckyou\n /arch\n /tuxamigos\n /deal\n /blog\n /neofeed\n /manjarofeed\n /kdefeed\n /programador\n /boom\n /windowseros\n /friends\n /note\n /id\n /acerca\n /support\n /help\n") #
+    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /vicman\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /time\n /format\n /fuckyou\n /arch\n /tuxamigos\n /deal\n /blog\n /neofeed\n /manjarofeed\n /kdefeed\n /wiki\n /programador\n /boom\n /windowseros\n /friends\n /note\n /id\n /acerca\n /support\n /help\n /bot_update\n") #
 
 @bot.message_handler(commands=['hola'])
 def command_hola(m):
@@ -476,7 +477,7 @@ def command_blog(m):
     cid = m.chat.id
     if (cid == -1001030218798):
         busqueda = 'http://kernelpanicblog.wordpress.com/search/%s/feed/rss'
-    else:
+    elif(cid == -1001042117783):
         busqueda = 'http://www.neositelinux.com/search/%s/feed/rss'
     
     if len(m.text.split()) >= 2:
@@ -488,6 +489,27 @@ def command_blog(m):
     else:
         bot.send_message( cid, "Missing Argument" )
         
+@bot.message_handler(commands=['wiki'])
+def command_blog(m):
+    cid = m.chat.id
+    busqueda = 'https://wiki.manjaro.org/index.php?search=%s'
+    
+    if len(m.text.split()) >= 2:
+        palabras = m.text.split()
+        palabras.pop(0)
+        a_buscar = '+'.join(palabras)
+        url = (busqueda % a_buscar)
+        bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
+    else:
+        bot.send_message( cid, "Missing Argument" )
+        
+@bot.message_handler(commands=['bot_update']) 
+def command_bot_update(m): 
+    cid = m.chat.id
+    if (cid == 5482488):
+        git_pull = commands.getoutput('git pull')
+        bot.send_message(m, git_pull)
+
 @bot.message_handler(commands=['programador'])
 def command_dev(m):
     cid = m.chat.id
