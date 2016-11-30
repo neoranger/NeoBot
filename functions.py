@@ -16,6 +16,7 @@ import owners
 #import re
 import logging
 import commands
+import subprocess
 
 TOKEN = token.token_id
 bot = telebot.TeleBot(TOKEN) # Creating our bot object.
@@ -476,9 +477,9 @@ def command_deal(m):
 def command_blog(m):
     cid = m.chat.id
     if (cid == -1001030218798):
-        busqueda = 'http://kernelpanicblog.wordpress.com/search/%s/feed/rss'
-    elif(cid == -1001042117783):
-        busqueda = 'http://www.neositelinux.com/search/%s/feed/rss'
+        busqueda = 'https://kernelpanicblog.wordpress.com/search/%s/feed/rss'
+    elif (cid == -1001042117783):
+        busqueda = 'https://www.neositelinux.com/search/%s/feed/rss'
     
     if len(m.text.split()) >= 2:
         palabras = m.text.split()
@@ -489,19 +490,19 @@ def command_blog(m):
     else:
         bot.send_message( cid, "Missing Argument" )
         
-@bot.message_handler(commands=['wiki'])
-def command_wiki(m):
-    cid = m.chat.id
-    busqueda = 'https://wiki.manjaro.org/index.php?search=%s'
-    
-    if len(m.text.split()) >= 2:
-        palabras = m.text.split()
-        palabras.pop(0)
-        a_buscar = '+'.join(palabras)
-        url = (busqueda % a_buscar)
-        bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
-    else:
-        bot.send_message( cid, "Missing Argument" )
+#@bot.message_handler(commands=['wiki'])
+#def command_wiki(m):
+#    cid = m.chat.id
+#    busqueda = 'https://wiki.manjaro.org/index.php?search=%s'
+#    
+#    if len(m.text.split()) >= 2:
+#        palabras = m.text.split()
+#        palabras.pop(0)
+#        a_buscar = '+'.join(palabras)
+#        url = (busqueda % a_buscar)
+#        bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
+#    else:
+#        bot.send_message( cid, "Missing Argument" )
         
 @bot.message_handler(commands=['bot_update']) 
 def command_bot_update(m): 
