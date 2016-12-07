@@ -478,7 +478,7 @@ def command_blog(m):
     cid = m.chat.id
     if (cid == -1001030218798):
         busqueda = 'https://kernelpanicblog.wordpress.com/search/%s/feed/rss'
-    elif (cid == -1001042117783):
+    else:
         busqueda = 'https://www.neositelinux.com/search/%s/feed/rss'
     
     if len(m.text.split()) >= 2:
