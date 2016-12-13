@@ -230,7 +230,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
     cid = m.chat.id
-    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /format\n /fuckyou\n /arch\n /deal\n /blog\n /neofeed\n /manjarofeed\n /kdefeed\n /wiki\n /programador\n /boom\n /windowseros\n /friends\n /note\n /id\n /acerca\n /support\n /help\n /bot_update\n") #
+    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /format\n /fuckyou\n /arch\n /solus\n /deal\n /blog\n /neofeed\n /manjarofeed\n /kdefeed\n /wiki\n /programador\n /boom\n /windowseros\n /friends\n /note\n /id\n /acerca\n /support\n /help\n /bot_update\n") #
 
 @bot.message_handler(commands=['hola'])
 def command_hola(m):
@@ -365,6 +365,11 @@ def command_welcome(m):
 def command_tabla(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/tabla.jpg', 'rb'))
+
+@bot.message_handler(commands=['solus'])
+def command_solus(m):
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/bleh.jpg', 'rb'))
 
 @bot.message_handler(commands=['takataka'])
 def command_taka(m):
