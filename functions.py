@@ -514,7 +514,7 @@ def command_bot_update(m):
     cid = m.chat.id
     if (cid == 5482488):
         git_pull = commands.getoutput('git pull')
-        bot.send_message(m, git_pull)
+        bot.send_message(cid, git_pull)
 
 @bot.message_handler(commands=['programador'])
 def command_dev(m):
