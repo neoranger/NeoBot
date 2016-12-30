@@ -17,6 +17,7 @@ import owners
 import logging
 import commands
 import subprocess
+from modules.weather import weather
 
 TOKEN = token.token_id
 bot = telebot.TeleBot(TOKEN) # Creating our bot object.
@@ -561,6 +562,26 @@ def manjaro_feed(m):
     url = str("https://manjaro.org/feed/")
     print (url)
     bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
+    
+@bot.message_handler(commands=['clima'])
+def command_weather(m):
+    cid = m.chat.id
+    uid = m.from_user.id
+    chattype = m.chat.type
+    query = m.text.strip("/w ")
+    to_user = uid if chattype in ("group", "supergroup") else cid
+    if query:
+        msg = weather(query)
+        if msg['status']:
+            bot.send_message(to_user, msg['status'])
+        elif msg['error']:
+            bot.send_message(to_user, msg['error'])
+        else:
+            with open(msg['plot'], 'rb') as plot:
+                bot.send_message(to_user, msg['txt'], parse_mode="Markdown")
+                bot.send_photo(to_user, plot)
+    else:
+        bot.send_message(to_user, "Example: /w Buenos Aires")
 
 ###############################################################################
 #Specials functions
