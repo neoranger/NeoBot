@@ -7,7 +7,7 @@ def listener(messages):
         cid = m.chat.id
         title = m.chat.title
         if m.content_type == 'text':
-            print ("[" + str(title) + "]: " + m.text)
+            print ("[" + str(cid) + "]: " + m.text)
  
 functions.bot.set_update_listener(listener)
 #############################################

@@ -17,7 +17,6 @@ import owners
 import logging
 import commands
 import subprocess
-from modules.weather import weather
 
 TOKEN = token.token_id
 bot = telebot.TeleBot(TOKEN) # Creating our bot object.
