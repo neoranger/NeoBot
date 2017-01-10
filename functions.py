@@ -196,7 +196,7 @@ def get_feed(url):
 def command_new_user(m):
     cid = m.chat.id
     grupo = m.chat.title
-    bot.send_message(cid, 'Bienvenido!!' + ' ' + str(m.new_chat_member.first_name) + 'Con alias: ' + '@' + str(m.new_chat_member.username) + ' a ' + grupo + 'Te sugerimos leer las reglas en el mensaje anclado.')
+    bot.send_message(cid, 'Bienvenido!!' + ' ' + str(m.new_chat_member.first_name) + ' ' + 'Con alias: ' + '@' + str(m.new_chat_member.username) + ' a ' + grupo + ' ' + 'Te sugerimos leer las reglas en el mensaje anclado.')
 
 @bot.message_handler(content_types=['left_chat_member'])
 def command_left_user(m):
