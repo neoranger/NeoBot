@@ -203,10 +203,10 @@ def command_left_user(m):
     cid = m.chat.id
     bot.send_message(cid, '@' + str(m.left_chat_member.username) + ' Gracias por pasar!! Bye!! ')
 
-@bot.message_handler(commands=['kick']) # Command
+@bot.message_handler(commands=['kick'])
 def command_kick(m):
-    cid = m.chat.id # Store the user id
-    bot.send_photo( cid, open( './imagenes/kick.jpg', 'rb')) # With the 'send_photo()' function we can send any image
+    cid = m.chat.id
+    bot.send_photo( cid, open( './imagenes/kick.jpg', 'rb'))
 
 @bot.message_handler(commands=['uppercut'])
 def command_uppercut(m):
@@ -268,10 +268,10 @@ def command_gentoo(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/gentoo.jpg', 'rb'))
 
-# @bot.message_handler(commands=['vicman'])
-# def command_vicman(m):
-#     cid = m.chat.id
-#     bot.send_photo( cid, open( './imagenes/vicman.jpg', 'rb'))
+ @bot.message_handler(commands=['vicman'])
+ def command_vicman(m):
+     cid = m.chat.id
+     bot.send_photo( cid, open( './imagenes/vicman.jpg', 'rb'))
 
 # @bot.message_handler(commands=['tuxamigos'])
 # def command_tuxamigos(m):
@@ -355,7 +355,7 @@ def command_fede(m):
 
 @bot.message_handler(commands=['welcome'])
 def command_welcome(m):
-    if (m.chat.id == -1001042117783):
+    if (m.chat.id == -1001042117783):  #ID del grupo No Solo Linux
         cid = m.chat.id
         bot.send_photo( cid, open( './imagenes/welcome.jpg', 'rb'))
     else:
@@ -563,25 +563,25 @@ def manjaro_feed(m):
     print (url)
     bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
     
-@bot.message_handler(commands=['clima'])
-def command_weather(m):
-    cid = m.chat.id
-    uid = m.from_user.id
-    chattype = m.chat.type
-    query = m.text.strip("/w ")
-    to_user = uid if chattype in ("group", "supergroup") else cid
-    if query:
-        msg = weather(query)
-        if msg['status']:
-            bot.send_message(to_user, msg['status'])
-        elif msg['error']:
-            bot.send_message(to_user, msg['error'])
-        else:
-            with open(msg['plot'], 'rb') as plot:
-                bot.send_message(to_user, msg['txt'], parse_mode="Markdown")
-                bot.send_photo(to_user, plot)
-    else:
-        bot.send_message(to_user, "Example: /w Buenos Aires")
+# @bot.message_handler(commands=['clima'])
+# def command_weather(m):
+#     cid = m.chat.id
+#     uid = m.from_user.id
+#     chattype = m.chat.type
+#     query = m.text.strip("/w ")
+#     to_user = uid if chattype in ("group", "supergroup") else cid
+#     if query:
+#         msg = weather(query)
+#         if msg['status']:
+#             bot.send_message(to_user, msg['status'])
+#         elif msg['error']:
+#             bot.send_message(to_user, msg['error'])
+#         else:
+#             with open(msg['plot'], 'rb') as plot:
+#                 bot.send_message(to_user, msg['txt'], parse_mode="Markdown")
+#                 bot.send_photo(to_user, plot)
+#     else:
+#         bot.send_message(to_user, "Example: /w Buenos Aires")
 
 ###############################################################################
 #Specials functions
