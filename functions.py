@@ -231,7 +231,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
     cid = m.chat.id
-    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /format\n /fuckyou\n /arch\n /solus\n /deal\n /blog\n /neofeed\n /manjarofeed\n /kdefeed\n /wiki\n /programador\n /boom\n /windowseros\n /friends\n /note\n /id\n /acerca\n /support\n /help\n /bot_update\n") #
+    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /format\n /fuckyou\n /arch\n /solus\n /deal\n /blog\n /neofeed\n /manjarofeed\n /kdefeed\n /wiki\n /programador\n /boom\n /windowseros\n /friends\n /note\n /id\n /acerca\n /support\n /isos\n /help\n /bot_update\n") #
 
 @bot.message_handler(commands=['hola'])
 def command_hola(m):
@@ -442,6 +442,23 @@ def command_help(message):
     markup.row(itembtnneo)
     markup.row(itembtnblog)
     markup.row(itembtnrepo)
+    bot.send_message(message.chat.id, "Choose one supporter:", reply_markup=markup)
+
+@bot.message_handler(commands=['isos'])
+def command_help(message):
+    markup = types.InlineKeyboardMarkup()
+    xfce32 = types.InlineKeyboardButton('XFCE 32 Bits', url="https://downloads.sourceforge.net/manjarotorrents/manjaro-xfce-16.10.3-stable-i686.iso.torrent")
+    xfce64 = types.InlineKeyboardButton('XFCE 64 Bits', url="https://downloads.sourceforge.net/manjarotorrents/manjaro-xfce-16.10.3-stable-x86_64.iso.torrent")
+    kde32 = types.InlineKeyboardButton('Plasma 32 Bits', url="https://downloads.sourceforge.net/manjarotorrents/manjaro-kde-16.10.3-stable-i686.iso.torrent")
+    kde64 = types.InlineKeyboardButton('Plasma 64 Bits', url="https://downloads.sourceforge.net/manjarotorrents/manjaro-kde-16.10.3-stable-x86_64.iso.torrent")
+    net32 = types.InlineKeyboardButton('Net 32 Bits', url="https://downloads.sourceforge.net/manjarotorrents/manjaro-net-16.08-i686.iso.torrent")
+    net64 = types.InlineKeyboardButton('Net 64 Bits', url="https://downloads.sourceforge.net/manjarotorrents/manjaro-net-16.08-x86_64.iso.torrent")
+    markup.row(xfce32)
+    markup.row(xfce64)
+    markup.row(kde32)
+    markup.row(kde64)
+    markup.row(net32)
+    markup.row(net64)
     bot.send_message(message.chat.id, "Choose one supporter:", reply_markup=markup)
 
 # @bot.message_handler(commands=['note'])
