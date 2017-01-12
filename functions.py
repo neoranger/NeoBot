@@ -196,7 +196,10 @@ def get_feed(url):
 def command_new_user(m):
     cid = m.chat.id
     grupo = m.chat.title
-    bot.send_message(cid, 'Bienvenido!!' + ' ' + str(m.new_chat_member.first_name) + ' ' + 'Con alias: ' + '@' + str(m.new_chat_member.username) + ' a ' + grupo + ' ' + 'Te sugerimos leer las reglas en el mensaje anclado.')
+    if (m.new_chat_member.username != 'None'):
+        bot.send_message(cid, 'Bienvenido' + ' ' + str(m.new_chat_member.first_name) + ' ' + str(m.new_chat_member.last_name) + '!! ' + 'Alias: ' + '@' + str(m.new_chat_member.username) + ' a ' + grupo + '. ' + 'Te sugerimos leer las reglas en el mensaje anclado.')
+    else:
+        bot.send_message(cid, 'Bienvenido' + ' ' + str(m.new_chat_member.first_name) + ' ' + str(m.new_chat_member.last_name) + '!! ' + ' A ' + grupo + '. ' + 'No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado.')
 
 @bot.message_handler(content_types=['left_chat_member'])
 def command_left_user(m):
@@ -459,7 +462,7 @@ def command_help(message):
     markup.row(kde64)
     markup.row(net32)
     markup.row(net64)
-    bot.send_message(message.chat.id, "Choose one supporter:", reply_markup=markup)
+    bot.send_message(message.chat.id, "Choose one ISO for download:", reply_markup=markup)
 
 # @bot.message_handler(commands=['note'])
 # def command_note(m):
