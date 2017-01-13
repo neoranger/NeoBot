@@ -197,7 +197,7 @@ def command_new_user(m):
     cid = m.chat.id
     grupo = m.chat.title
     if (m.new_chat_member.username != 'None'):
-        bot.send_message(cid, 'Bienvenido' + ' ' + str(m.new_chat_member.first_name) + ' ' + str(m.new_chat_member.last_name) + '!! ' + 'A.K.A. ' + '@' + str(m.new_chat_member.username) + ' a ' + grupo + '. ' + 'Te sugerimos leer las reglas en el mensaje anclado.')
+        bot.send_message(cid, 'Bienvenido' + ' ' + unicode(m.new_chat_member.first_name) + ' ' + unicode(m.new_chat_member.last_name) + '!! ' + 'A.K.A. ' + '@' + str(m.new_chat_member.username) + ' a ' + unicode(grupo) + '. ' + 'Te sugerimos leer las reglas en el mensaje anclado.')
     else:
         bot.send_message(cid, 'Bienvenido' + ' ' + str(m.new_chat_member.first_name) + ' ' + str(m.new_chat_member.last_name) + '!! ' + ' A ' + grupo + '. ' + 'No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado.')
 
