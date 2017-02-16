@@ -1,7 +1,7 @@
 NeoBot
 =========
 
-Telegram Bot just for fun. You can add the bot @RootAdminBot for test.
+Telegram Bot just for fun. You can add the bot (https://t.me/rootadminbot "RootAdminBot") for test.
 
 Use the command /support to contact me.
 
