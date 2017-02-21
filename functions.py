@@ -436,8 +436,11 @@ def command_love(m):
 def command_feed(m):
     cid = m.chat.id
     url = str(m.text).split(None,1)
-    print (url)
-    bot.send_message(cid, get_feed(url[1]),disable_web_page_preview=True,parse_mode="markdown")
+    try:
+        print (url)
+        bot.send_message(cid, get_feed(url[1]),disable_web_page_preview=True,parse_mode="markdown")
+    except IndexError:
+        bot.send_message( cid, "Missing Argument - Example: /feed http://www.example.com" )
 
 @bot.message_handler(commands=['id'])
 def command_id(m):
