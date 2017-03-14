@@ -214,7 +214,7 @@ def command_new_user(m):
 @bot.message_handler(content_types=['left_chat_member'])
 def command_left_user(m):
     cid = m.chat.id
-    bot.send_message(cid, '@' + str(m.left_chat_member.username) + ' Gracias por pasar!! Bye!! ')
+    bot.send_message(cid, "@{0} Gracias por pasar!! Bye!!".format(left_chat_member.username))
 
 @bot.message_handler(commands=['kick'])
 def command_kick(m):
@@ -399,7 +399,8 @@ def command_ubuntu(m):
 def command_kill(m):
     cid = m.chat.id
     list = str(m.text).split(None,1)
-    bot.send_message( cid, "Muere!!!" + " " + str(list[1]))
+    killed = str(list[1])
+    bot.send_message( cid, "Muere {0}!!!".format(killed))
     bot.send_photo( cid, open( './imagenes/rambo.jpg', 'rb'))
 
 @bot.message_handler(commands=['format'])
