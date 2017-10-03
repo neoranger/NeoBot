@@ -454,7 +454,7 @@ def command_id(m):
 def command_help(message):
     markup = types.InlineKeyboardMarkup()
     itembtnneo = types.InlineKeyboardButton('NeoRanger', url="telegram.me/NeoRanger")
-    itembtnblog = types.InlineKeyboardButton('URL Blog', url="http://www.neositelinux.com")
+    itembtnblog = types.InlineKeyboardButton('URL Blog', url="https://www.neositelinux.com")
     itembtnrepo = types.InlineKeyboardButton('Repo Github', url="http://github.com/neoranger/NeoBot")
     markup.row(itembtnneo)
     markup.row(itembtnblog)
@@ -500,29 +500,17 @@ def command_deal(m):
 def command_blog(m):
     cid = m.chat.id
     busqueda = 'https://www.neositelinux.com/search/index.html?query='
-    
+    print busqueda
     if len(m.text.split()) >= 2:
         palabras = m.text.split()
         palabras.pop(0)
         a_buscar = '+'.join(palabras)
-        url = (busqueda % a_buscar)
+        print a_buscar
+        url = (busqueda + a_buscar)
+        print url
         bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
     else:
         bot.send_message( cid, "Missing Argument" )
-        
-#@bot.message_handler(commands=['wiki'])
-#def command_wiki(m):
-#    cid = m.chat.id
-#    busqueda = 'https://wiki.manjaro.org/index.php?search=%s'
-#    
-#    if len(m.text.split()) >= 2:
-#        palabras = m.text.split()
-#        palabras.pop(0)
-#        a_buscar = '+'.join(palabras)
-#        url = (busqueda % a_buscar)
-#        bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
-#    else:
-#        bot.send_message( cid, "Missing Argument" )
         
 @bot.message_handler(commands=['bot_update']) 
 def command_bot_update(m): 
