@@ -244,7 +244,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
     cid = m.chat.id
-    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /format\n /fuckyou\n /arch\n /solus\n /deal\n /blog\n /neofeed\n /manjarofeed\n /kdefeed\n /programador\n /boom\n /windowseros\n /friends\n /id\n /acerca\n /support\n  /help\n /bot_update\n") #
+    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /format\n /fuckyou\n /arch\n /solus\n /deal\n /blog\n /neofeed\n /programador\n /boom\n /windowseros\n /friends\n /id\n /acerca\n /support\n  /help\n /bot_update\n") #
 
 @bot.message_handler(commands=['hola'])
 def command_hola(m):
@@ -499,7 +499,7 @@ def command_deal(m):
 @bot.message_handler(commands=['blog'])
 def command_blog(m):
     cid = m.chat.id
-    busqueda = 'https://www.neositelinux.com/search/%s/feed/rss'
+    busqueda = 'https://www.neositelinux.com/search/index.html?query='
     
     if len(m.text.split()) >= 2:
         palabras = m.text.split()
@@ -559,7 +559,7 @@ def command_friends(m):
 @bot.message_handler(commands=['neofeed'])
 def neo_feed(m):
     cid = m.chat.id
-    url = str("https://neositelinux.com/feed/")
+    url = str("https://neositelinux.com/feed.xml")
     print (url)
     bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
     
