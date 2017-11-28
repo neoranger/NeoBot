@@ -192,7 +192,7 @@ def get_feed(url):
 #find_python = re.compile(r"(?i)\bPYTHON\b").search
 
 #Functions
-@bot.message_handler(content_types=['new_chat_member'])
+@bot.message_handler(content_types=['new_chat_members'])
 def command_new_user(m):
     cid = m.chat.id
     grupo = m.chat.title
@@ -231,10 +231,18 @@ def command_hadouken(m):
     cid = m.chat.id
     bot.send_document( cid, open( './imagenes/hadouken.gif', 'rb'))
 
+#@bot.message_handler(commands=['windowsero'])
+#def command_windowsero(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/windowsero.jpg', 'rb'))
+
 @bot.message_handler(commands=['windowsero'])
 def command_windowsero(m):
     cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/windowsero.jpg', 'rb'))
+    try:
+     bot.send_photo( cid, open( './imagenes/windowsero.jpg', 'rb'))
+    except Exception as a:
+     bot.send_message(cid, "Error: {}".format(a))
 
 @bot.message_handler(commands=['acerca'])
 def command_acerca(m):

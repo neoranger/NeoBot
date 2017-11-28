@@ -13,5 +13,6 @@ functions.bot.set_update_listener(listener)
 #############################################
 
 #Bot starts here
-print('Bot Started')
+print('NeoBot Started')
+print('Please visit us on www.neositelinux.com')
 functions.bot.polling(none_stop=True)
