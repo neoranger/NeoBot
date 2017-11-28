@@ -73,10 +73,6 @@ def format_list(list, cols=2):
 
 @bot.message_handler(commands=['add'])
 def add(m):
-    if (m.chat.id == -1001042117783):
-        if (m.from_user.id not in owners.owner):
-            bot.reply_to(m, 'No tienes permisos')
-            return
     if(m.reply_to_message):
         if(m.reply_to_message.text):
             if(len(m.reply_to_message.text.split()) < 2):
@@ -119,10 +115,6 @@ def add(m):
 
 @bot.message_handler(commands=['del'])
 def delete(m):
-    if (m.chat.id == -1001042117783):
-        if (m.from_user.id not in owners.owner):
-            bot.reply_to(m, 'No tienes permisos')
-            return
     if(len(m.text.split()) < 2):
         bot.reply_to(m, 'Bad Arguments')
         return
@@ -196,19 +188,19 @@ def get_feed(url):
 def command_new_user(m):
     cid = m.chat.id
     grupo = m.chat.title
-    if (m.new_chat_members.username != None and m.new_chat_members.first_name != None and m.new_chat_members.last_name != None):
+    if (m.new_chat_member.username != None and m.new_chat_member.first_name != None and m.new_chat_member.last_name != None):
         bot.send_message(cid, "Bienvenido {0} {1} !! A.K.A. @{2} a {3}. Te sugerimos leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.first_name, m.new_chat_member.last_name, m.new_chat_member.username, grupo))
-    elif (m.new_chat_members.username != None and m.new_chat_members.first_name == None and m.new_chat_members.last_name == None):
+    elif (m.new_chat_member.username != None and m.new_chat_member.first_name == None and m.new_chat_member.last_name == None):
         bot.send_message(cid, "Bienvenido!! @{0} a {1}. No tenés nombres, podrías completar los datos. Te sugerimos leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.username, grupo))
-    elif (m.new_chat_members.username != None and m.new_chat_members.first_name != None and m.new_chat_members.last_name == None):
+    elif (m.new_chat_member.username != None and m.new_chat_member.first_name != None and m.new_chat_member.last_name == None):
         bot.send_message(cid, "Bienvenido {0} A.K.A. @{1} a {2}. Te sugerimos leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.first_name,m.new_chat_member.username, grupo))
-    elif (m.new_chat_members.username != None and m.new_chat_members.first_name == None and m.new_chat_members.last_name != None):
+    elif (m.new_chat_member.username != None and m.new_chat_member.first_name == None and m.new_chat_member.last_name != None):
         bot.send_message(cid, "Bienvenido {0}!! A.K.A. @{1} a {2}. Te sugerimos leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.last_name,m.new_chat_member.username, grupo))
-    elif (m.new_chat_members.username == None and m.new_chat_members.first_name != None and m.new_chat_members.last_name != None):
+    elif (m.new_chat_member.username == None and m.new_chat_member.first_name != None and m.new_chat_member.last_name != None):
         bot.send_message(cid, "Bienvenido {0} {1} a {2}. No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.first_name,m.new_chat_member.last_name,grupo))
-    elif (m.new_chat_members.username == None and m.new_chat_members.first_name == None and m.new_chat_members.last_name != None):
+    elif (m.new_chat_member.username == None and m.new_chat_member.first_name == None and m.new_chat_member.last_name != None):
         bot.send_message(cid, "Bienvenido {0}!! a {1}. No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.last_name, grupo))
-    elif (m.new_chat_members.username == None and m.new_chat_members.first_name != None and m.new_chat_members.last_name == None):
+    elif (m.new_chat_member.username == None and m.new_chat_member.first_name != None and m.new_chat_member.last_name == None):
         bot.send_message(cid, "Bienvenido {0} a {1}. No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.first_name, grupo))
 
 #@bot.message_handler(content_types=['left_chat_member'])
