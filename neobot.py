@@ -5,9 +5,9 @@ import functions
 def listener(messages):
     for m in messages:
         cid = m.chat.id
-        title = m.chat.title
+        title = u"m.chat.title"
         if m.content_type == 'text':
-            print ("[" + unicode(title) + "]: " + m.text)
+            print ("[" + title.encode("utf-8") + "]: " + m.text)
  
 functions.bot.set_update_listener(listener)
 #############################################
