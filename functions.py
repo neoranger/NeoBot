@@ -491,21 +491,21 @@ def command_deal(m):
 #     except IndexError:
 #         bot.send_message( cid, "Missing Argument" )
 
-@bot.message_handler(commands=['blog'])
-def command_blog(m):
-    cid = m.chat.id
-    busqueda = 'https://www.neositelinux.com/search/index.html?query='
-    print busqueda
-    if len(m.text.split()) >= 2:
-        palabras = m.text.split()
-        palabras.pop(0)
-        a_buscar = '+'.join(palabras)
-        print a_buscar
-        url = (busqueda + a_buscar)
-        print url
-        bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
-    else:
-        bot.send_message( cid, "Missing Argument" )
+#@bot.message_handler(commands=['blog'])
+#def command_blog(m):
+#    cid = m.chat.id
+#    busqueda = 'https://www.neositelinux.com/search/index.html?query='
+#    print busqueda
+#    if len(m.text.split()) >= 2:
+#        palabras = m.text.split()
+#        palabras.pop(0)
+#        a_buscar = '+'.join(palabras)
+#        print a_buscar
+#        url = (busqueda + a_buscar)
+#        print url
+#        bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
+#    else:
+#        bot.send_message( cid, "Missing Argument" )
         
 @bot.message_handler(commands=['bot_update']) 
 def command_bot_update(m): 
