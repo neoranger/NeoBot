@@ -449,12 +449,14 @@ def command_id(m):
 def command_help(message):
     markup = types.InlineKeyboardMarkup()
     itembtnneo = types.InlineKeyboardButton('NeoRanger', url="telegram.me/NeoRanger")
+    itembtngroup = types.InlineKeyboardButton('NeoSiteLinux Grupo', url="telegram.me/neositelinuxgrupo")
     itembtnblog = types.InlineKeyboardButton('URL Blog', url="https://www.neositelinux.com")
     itembtnrepo = types.InlineKeyboardButton('Repo Github', url="http://github.com/neoranger/NeoBot")
     markup.row(itembtnneo)
+    markup.row(itembtngroup)
     markup.row(itembtnblog)
     markup.row(itembtnrepo)
-    bot.send_message(message.chat.id, "Choose one supporter:", reply_markup=markup)
+    bot.send_message(message.chat.id, "Choose an option:", reply_markup=markup)
 
 # @bot.message_handler(commands=['note'])
 # def command_note(m):
