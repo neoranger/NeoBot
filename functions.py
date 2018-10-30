@@ -189,30 +189,30 @@ def command_new_user(m):
     cid = m.chat.id
     grupo = m.chat.title
     markup = types.InlineKeyboardMarkup()
-    itembtnnormas = types.InlineKeyboardButton('Normas', url="https://t.me/neositelinuxgrupo/4")
+    itembtnnormas = types.InlineKeyboardButton('<Click Aquí>', url="https://t.me/neositelinuxgrupo/4")
     markup.row(itembtnnormas)
 
     if (m.new_chat_member.username != None and m.new_chat_member.first_name != None and m.new_chat_member.last_name != None):
         bot.send_message(cid, "Bienvenido {0} {1} !! A.K.A. @{2} a {3}. Te sugerimos leer las reglas en el mensaje anclado o click en el botón.".format(m.new_chat_member.first_name, m.new_chat_member.last_name, m.new_chat_member.username, grupo))
-        bot.send_message(m.chat.id, "", reply_markup=markup)
+        bot.send_message(cid, "Normas", reply_markup=markup)
     elif (m.new_chat_member.username != None and m.new_chat_member.first_name == None and m.new_chat_member.last_name == None):
         bot.send_message(cid, "Bienvenido!! @{0} a {1}. No tenés nombres, podrías completar los datos. Te sugerimos leer las reglas en el mensaje anclado o click en el botón.".format(m.new_chat_member.username, grupo))
-        bot.send_message(m.chat.id, "", reply_markup=markup)
+        bot.send_message(cid, "Normas", reply_markup=markup)
     elif (m.new_chat_member.username != None and m.new_chat_member.first_name != None and m.new_chat_member.last_name == None):
         bot.send_message(cid, "Bienvenido {0} A.K.A. @{1} a {2}. Te sugerimos leer las reglas en el mensaje anclado o click en el botón.".format(m.new_chat_member.first_name,m.new_chat_member.username, grupo))
-        bot.send_message(m.chat.id, "", reply_markup=markup)
+        bot.send_message(cid, "Normas", reply_markup=markup)
     elif (m.new_chat_member.username != None and m.new_chat_member.first_name == None and m.new_chat_member.last_name != None):
         bot.send_message(cid, "Bienvenido {0}!! A.K.A. @{1} a {2}. Te sugerimos leer las reglas en el mensaje anclado o click en el botón.".format(m.new_chat_member.last_name,m.new_chat_member.username, grupo))
-        bot.send_message(m.chat.id, "", reply_markup=markup)
+        bot.send_message(cid, "Normas", reply_markup=markup)
     elif (m.new_chat_member.username == None and m.new_chat_member.first_name != None and m.new_chat_member.last_name != None):
         bot.send_message(cid, "Bienvenido {0} {1} a {2}. No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado o click en el botón.".format(m.new_chat_member.first_name,m.new_chat_member.last_name,grupo))
-        bot.send_message(m.chat.id, "", reply_markup=markup)
+        bot.send_message(cid, "Normas", reply_markup=markup)
     elif (m.new_chat_member.username == None and m.new_chat_member.first_name == None and m.new_chat_member.last_name != None):
         bot.send_message(cid, "Bienvenido {0}!! a {1}. No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado o click en el botón.".format(m.new_chat_member.last_name, grupo))
-        bot.send_message(m.chat.id, "", reply_markup=markup)
+        bot.send_message(cid, "Normas", reply_markup=markup)
     elif (m.new_chat_member.username == None and m.new_chat_member.first_name != None and m.new_chat_member.last_name == None):
         bot.send_message(cid, "Bienvenido {0} a {1}. No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado o click en el botón.".format(m.new_chat_member.first_name, grupo))
-        bot.send_message(m.chat.id, "", reply_markup=markup)
+        bot.send_message(cid, "Normas", reply_markup=markup)
 
 #@bot.message_handler(content_types=['left_chat_member'])
 #def command_left_user(m):
