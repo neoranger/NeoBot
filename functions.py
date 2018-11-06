@@ -593,6 +593,14 @@ def neo_feed(m):
 #     else:
 #         bot.send_message(to_user, "Example: /w Buenos Aires")
 
+@bot.message_handler(commands=['kick'])
+def command_kick_user(m):
+        cid = m.chat.id
+        uid = m.from_user.id
+        if bot.get_chat_member(cid, uid).status in ["administrator", "creator"] and bot.get_chat_member(cid, m.reply_to_message.from_user.id).status not in ["administrator", "creator"]:
+           bot.send_message(cid, 'Hasta la vista, Baby')
+           bot.kick_chat_member(cid, m.reply_to_message.from_user.id)
+
 ###############################################################################
 #Specials functions
 def send_message_checking_permission(m, response):
