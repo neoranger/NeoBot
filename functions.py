@@ -250,7 +250,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
     cid = m.chat.id
-    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /format\n /fuckyou\n /arch\n /solus\n /deal\n /blog\n /neofeed\n /programador\n /boom\n /windowseros\n /friends\n /id\n /acerca\n /support\n  /help\n /bot_update\n") #
+    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /format\n /fuckyou\n /arch\n /solus\n /deal\n /blog\n /neofeed\n /programador\n /boom\n /windowseros\n /friends\n /id\n /acerca\n /support\n /invitameuncafe\n /help\n /bot_update\n")
 
 @bot.message_handler(commands=['hola'])
 def command_hola(m):
@@ -600,6 +600,14 @@ def command_kick_user(m):
         if bot.get_chat_member(cid, uid).status in ["administrator", "creator"] and bot.get_chat_member(cid, m.reply_to_message.from_user.id).status not in ["administrator", "creator"]:
            bot.send_message(cid, 'Hasta la vista, Baby')
            bot.kick_chat_member(cid, m.reply_to_message.from_user.id)
+
+@bot.message_handler(commands=['invitameuncafe'])
+def command_cafe(m):
+    cid = m.chat.id
+    markup = types.InlineKeyboardMarkup()
+    itembtncafe = types.InlineKeyboardButton('Te invito!', url="https://www.paypal.me/neoranger")
+    markup.row(itembtncafe)
+    bot.send_message(cid, '¿Te parece que el proyecto merece crecer? Invítame un café!.',reply_markup=markup)
 
 ###############################################################################
 #Specials functions
