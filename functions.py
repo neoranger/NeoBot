@@ -219,10 +219,10 @@ def command_new_user(m):
 #    cid = m.chat.id
 #    bot.send_message(cid, "@{0} Gracias por pasar!! Bye!!".format(left_chat_member.username))
 
-@bot.message_handler(commands=['kick'])
-def command_kick(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/kick.jpg', 'rb'))
+#@bot.message_handler(commands=['kick'])
+#def command_kick(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/kick.jpg', 'rb'))
 
 @bot.message_handler(commands=['uppercut'])
 def command_uppercut(m):
