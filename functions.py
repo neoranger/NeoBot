@@ -188,9 +188,14 @@ def get_feed(url):
 def command_new_user(m):
     cid = m.chat.id
     grupo = m.chat.title
+    usuario = bot.get_chat_member(cid, m.new_chat_member.id).user
+    bots = m.new_chat_member.id
     markup = types.InlineKeyboardMarkup()
     itembtnnormas = types.InlineKeyboardButton('<Click Aquí>', url="https://t.me/neositelinuxgrupo/4")
     markup.row(itembtnnormas)
+
+    if usuario.is_bot:
+       bot.kick_chat_member(cid, bots)
 
     if (m.new_chat_member.username != None and m.new_chat_member.first_name != None and m.new_chat_member.last_name != None):
         bot.send_message(cid, "Bienvenido {0} {1} !! A.K.A. @{2} a {3}. Te sugerimos leer las reglas en el mensaje anclado o click en el botón.".format(m.new_chat_member.first_name, m.new_chat_member.last_name, m.new_chat_member.username, grupo))
