@@ -255,7 +255,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
     cid = m.chat.id
-    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /ubuntu\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /deletethat\n /coding\n /nelson\n /spoiler\n /esssta\n /fede\n /litrona\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /format\n /fuckyou\n /arch\n /solus\n /deal\n /blog\n /neofeed\n /programador\n /boom\n /windowseros\n /friends\n /id\n /acerca\n /support\n /invitameuncafe\n /help\n /bot_update\n")
+    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /deletethat\n /coding\n /nelson\n /spoiler\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /arch\n /solus\n /deal\n /blog\n /neofeed\n /programador\n /windowseros\n /friends\n /id\n /acerca\n /support\n /invitameuncafe\n /help\n")
 
 @bot.message_handler(commands=['hola'])
 def command_hola(m):
@@ -352,11 +352,6 @@ def command_kde(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/kderock.jpg', 'rb'))
 
-@bot.message_handler(commands=['esssta'])
-def command_esssta(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/esssta.jpg', 'rb'))
-
 @bot.message_handler(commands=['what'])
 def command_what(m):
     cid = m.chat.id
@@ -367,21 +362,14 @@ def command_vegetta(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/vegetta.jpg', 'rb'))
 
-@bot.message_handler(commands=['litrona'])
-def command_litrona(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/litrona.jpg', 'rb'))
-
-@bot.message_handler(commands=['fede'])
-def command_fede(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/fede.jpg', 'rb'))
-
 @bot.message_handler(commands=['welcome'])
 def command_welcome(m):
     if (m.chat.id == -1001042117783):  #ID del grupo No Solo Linux
         cid = m.chat.id
-        bot.send_photo( cid, open( './imagenes/welcome.jpg', 'rb'))
+        bot.send_photo(cid, open('./imagenes/welcome.jpg', 'rb'))
+    elif (m.chat.id == -1001269808796): #ID del grupo NeoSiteLinux
+        cid = m.chat.id
+        bot.send_photo(cid, open('./imagenes/welcome2.jpg', 'rb'))
     else:
         bot.reply_to(m, 'Este comando es exclusivo de otro grupo')
         return
@@ -401,11 +389,6 @@ def command_taka(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/takataka.jpg', 'rb'))
 
-@bot.message_handler(commands=['ubuntu'])
-def command_ubuntu(m):
-    cid = m.chat.id
-    bot.send_message( cid, 'http://www.youtube.com/watch?v=xK-_OdlCGBg')
-
 @bot.message_handler(commands=['kill'])
 def command_kill(m):
     cid = m.chat.id
@@ -414,25 +397,25 @@ def command_kill(m):
     bot.send_message( cid, "Muere {0}!!!".format(killed))
     bot.send_photo( cid, open( './imagenes/rambo.jpg', 'rb'))
 
-@bot.message_handler(commands=['format'])
-def command_format(m):
-    cid = m.chat.id
-    try:
-        bot.send_message( cid, m.text.split(None,1)[1],parse_mode='markdown')
-    except IndexError:
-        bot.send_message( cid, "Argument missing" )
-    except Exception:
-        bot.send_message( cid, "Invalid argument" )
+#@bot.message_handler(commands=['format'])
+#def command_format(m):
+#    cid = m.chat.id
+#    try:
+#        bot.send_message( cid, m.text.split(None,1)[1],parse_mode='markdown')
+#    except IndexError:
+#        bot.send_message( cid, "Argument missing" )
+#    except Exception:
+#        bot.send_message( cid, "Invalid Argument")
 
 @bot.message_handler(commands=['maestruli'])
 def command_maestruli(m):
     cid = m.chat.id
     bot.send_document( cid, open( './imagenes/maestruli.mp4', 'rb'))
 
-@bot.message_handler(commands=['fuckyou'])
-def command_fuckyou(m):
-    cid = m.chat.id
-    bot.send_document( cid, open( './imagenes/fuckyou.mp4', 'rb'))
+#@bot.message_handler(commands=['fuckyou'])
+#def command_fuckyou(m):
+#    cid = m.chat.id
+#    bot.send_document( cid, open( './imagenes/fuckyou.mp4', 'rb'))
 
 @bot.message_handler(commands=['arch'])
 def command_arch(m):
@@ -474,23 +457,6 @@ def command_help(message):
     markup.row(itembtnrepo)
     bot.send_message(message.chat.id, "Choose an option:", reply_markup=markup)
 
-# @bot.message_handler(commands=['note'])
-# def command_note(m):
-#     cid = m.chat.id
-#     string_array = str(m.text).split(None,1)
-#     if (m.chat.id == 5482488):
-#         grabo_nota = (codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1]))
-#         send_message_checking_permission(m, grabo_nota)
-#         if string_array[0] == "/note" and user.user_id == cid:
-#             try:
-#                 grabo_nota = (codecs.open("./imagenes/notas.txt", "a", "utf8").write("\n" + string_array[1]))
-#                 send_message_checking_permission(m, grabo_nota)
-#             except IndexError:
-#                 bot.send_message( cid, "Argumento invalido. Use /note y lo que quiera grabar. Si no está habilitado para grabar no se moleste en usar el comando" )
-#     else:
-#         bot.reply_to(m, 'Sorry, this command is exclusive. Just the owner can use it.')
-#         return
-
 @bot.message_handler(commands=['deal'])
 def command_deal(m):
     cid = m.chat.id
@@ -525,23 +491,11 @@ def command_deal(m):
 #    else:
 #        bot.send_message( cid, "Missing Argument" )
         
-@bot.message_handler(commands=['bot_update']) 
-def command_bot_update(m): 
-    cid = m.chat.id
-    if (cid == 5482488):
-        git_pull = commands.getoutput('git pull')
-        bot.send_message(cid, git_pull)
-
 @bot.message_handler(commands=['programador'])
 def command_dev(m):
     cid = m.chat.id
     bot.send_document( cid, open( './imagenes/soyprogramador.mp4', 'rb'))
     
-@bot.message_handler(commands=['boom'])
-def command_boom(m):
-    cid = m.chat.id
-    bot.send_document( cid, open( './imagenes/mindblown.mp4', 'rb'))
-
 @bot.message_handler(commands=['windowseros'])
 def command_windowseros(m):
     cid = m.chat.id
@@ -563,40 +517,6 @@ def neo_feed(m):
     url = str("https://neositelinux.com/feed.xml")
     print (url)
     bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
-    
-#@bot.message_handler(commands=['kdefeed'])
-#def kde_feed(m):
-#    cid = m.chat.id
-#    url = str("https://www.kdeblog.com/feed/")
-#    print (url)
-#    bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
-
-#@bot.message_handler(commands=['manjarofeed'])
-#def manjaro_feed(m):
-#    cid = m.chat.id
-#    url = str("https://manjaro.org/feed/")
-#    print (url)
-#    bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
-    
-# @bot.message_handler(commands=['clima'])
-# def command_weather(m):
-#     cid = m.chat.id
-#     uid = m.from_user.id
-#     chattype = m.chat.type
-#     query = m.text.strip("/w ")
-#     to_user = uid if chattype in ("group", "supergroup") else cid
-#     if query:
-#         msg = weather(query)
-#         if msg['status']:
-#             bot.send_message(to_user, msg['status'])
-#         elif msg['error']:
-#             bot.send_message(to_user, msg['error'])
-#         else:
-#             with open(msg['plot'], 'rb') as plot:
-#                 bot.send_message(to_user, msg['txt'], parse_mode="Markdown")
-#                 bot.send_photo(to_user, plot)
-#     else:
-#         bot.send_message(to_user, "Example: /w Buenos Aires")
 
 @bot.message_handler(commands=['kick'])
 def command_kick_user(m):
