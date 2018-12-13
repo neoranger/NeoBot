@@ -191,8 +191,13 @@ def command_new_user(m):
     usuario = bot.get_chat_member(cid, m.new_chat_member.id).user
     bots = m.new_chat_member.id
     markup = types.InlineKeyboardMarkup()
-    itembtnnormas = types.InlineKeyboardButton('<Click Aquí>', url="https://t.me/neositelinuxgrupo/4")
+#    itembtnnormas = types.InlineKeyboardButton('<Click Aquí>', url="https://t.me/neositelinuxgrupo/4")
     markup.row(itembtnnormas)
+
+    if (m.chat.id == -1001269808796):
+       itembtnnormas = types.InlineKeyboardButton('<Click Aquí>', url="https://t.me/neositelinuxgrupo/4")
+    else:
+       itembtnnormas = types.InlineKeyboardButton('<Click Aquí>', url="https://github.com/neoranger/NeoBot")
 
     if usuario.is_bot:
        bot.kick_chat_member(cid, bots)
