@@ -234,23 +234,23 @@ def command_new_user(m):
 #    cid = m.chat.id
 #    bot.send_photo( cid, open( './imagenes/kick.jpg', 'rb'))
 
-@bot.message_handler(commands=['uppercut'])
-def command_uppercut(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/uppercut.jpg', 'rb'))
+#@bot.message_handler(commands=['uppercut'])
+#def command_uppercut(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/uppercut.jpg', 'rb'))
 
-@bot.message_handler(commands=['hadouken'])
-def command_hadouken(m):
-    cid = m.chat.id
-    bot.send_document( cid, open( './imagenes/hadouken.gif', 'rb'))
+#@bot.message_handler(commands=['hadouken'])
+#def command_hadouken(m):
+#    cid = m.chat.id
+#    bot.send_document( cid, open( './imagenes/hadouken.gif', 'rb'))
 
-@bot.message_handler(commands=['windowsero'])
-def command_windowsero(m):
-    cid = m.chat.id
-    try:
-     bot.send_photo( cid, open( './imagenes/windowsero.jpg', 'rb'))
-    except Exception as a:
-     bot.send_message(cid, "Error: {}".format(a))
+#@bot.message_handler(commands=['windowsero'])
+#def command_windowsero(m):
+#    cid = m.chat.id
+#    try:
+#     bot.send_photo( cid, open( './imagenes/windowsero.jpg', 'rb'))
+#    except Exception as a:
+#     bot.send_message(cid, "Error: {}".format(a))
 
 @bot.message_handler(commands=['acerca'])
 def command_acerca(m):
@@ -260,7 +260,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
     cid = m.chat.id
-    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /uppercut\n /hadouken\n /windowsero\n /stallman\n /ok\n /yes\n /nsa\n /attack\n /gentoo\n /kde\n /flame\n /tabla\n /deletethat\n /coding\n /nelson\n /spoiler\n /vegetta\n /what\n /takataka\n /kill\n /viernes\n /love\n /roll\n /arch\n /solus\n /deal\n /blog\n /neofeed\n /programador\n /windowseros\n /friends\n /id\n /acerca\n /support\n /invitameuncafe\n /help\n")
+    bot.send_message( cid, "Comandos Disponibles:\n /welcome\n /hola\n /hello\n /add\n /del\n /size\n /ignore\n /kick\n /stallman\n /nsa\n /deletethat\n /spoiler\n /viernes\n /roll\n /blog\n /neofeed\n /programador\n /id\n /acerca\n /support\n /invitameuncafe\n /help\n")
 
 @bot.message_handler(commands=['hola'])
 def command_hola(m):
@@ -272,10 +272,10 @@ def command_hello(m):
     cid = m.chat.id
     bot.send_message( cid, 'Hello and welcome!')
 
-@bot.message_handler(commands=['attack'])
-def command_attack(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/dictionary_attack.jpg', 'rb'))
+#@bot.message_handler(commands=['attack'])
+#def command_attack(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/dictionary_attack.jpg', 'rb'))
 
 @bot.message_handler(commands=['nsa'])
 def command_nsa(m):
@@ -292,10 +292,10 @@ def command_roll(m):
 #     cid = m.chat.id
 #     bot.send_message( cid, str(datetime.datetime.now()))
 
-@bot.message_handler(commands=['gentoo'])
-def command_gentoo(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/gentoo.jpg', 'rb'))
+#@bot.message_handler(commands=['gentoo'])
+#def command_gentoo(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/gentoo.jpg', 'rb'))
 
  #@bot.message_handler(commands=['vicman'])
  #def command_vicman(m):
@@ -322,25 +322,25 @@ def command_stallman(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/dancingstallman.jpg', 'rb'))
 
-@bot.message_handler(commands=['ok'])
-def command_ok(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/ok.jpg', 'rb'))
+#@bot.message_handler(commands=['ok'])
+#def command_ok(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/ok.jpg', 'rb'))
 
-@bot.message_handler(commands=['coding'])
-def command_coding(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/coding.jpg', 'rb'))
+#@bot.message_handler(commands=['coding'])
+#def command_coding(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/coding.jpg', 'rb'))
 
-@bot.message_handler(commands=['nelson'])
-def command_nelson(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/nelson.jpg', 'rb'))
+#@bot.message_handler(commands=['nelson'])
+#def command_nelson(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/nelson.jpg', 'rb'))
 
-@bot.message_handler(commands=['yes'])
-def command_fuckyeah(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/fuckyeah.jpg', 'rb'))
+#@bot.message_handler(commands=['yes'])
+#def command_fuckyeah(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/fuckyeah.jpg', 'rb'))
 
 @bot.message_handler(commands=['spoiler'])
 def command_spoiler(m):
@@ -352,20 +352,20 @@ def command_viernes(m):
     cid = m.chat.id
     bot.send_photo( cid, open( './imagenes/viernes.jpg', 'rb'))
 
-@bot.message_handler(commands=['kde'])
-def command_kde(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/kderock.jpg', 'rb'))
+#@bot.message_handler(commands=['kde'])
+#def command_kde(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/kderock.jpg', 'rb'))
 
-@bot.message_handler(commands=['what'])
-def command_what(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/what.jpg', 'rb'))
+#@bot.message_handler(commands=['what'])
+#def command_what(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/what.jpg', 'rb'))
 
-@bot.message_handler(commands=['vegetta'])
-def command_vegetta(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/vegetta.jpg', 'rb'))
+#@bot.message_handler(commands=['vegetta'])
+#def command_vegetta(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/vegetta.jpg', 'rb'))
 
 @bot.message_handler(commands=['welcome'])
 def command_welcome(m):
@@ -379,28 +379,28 @@ def command_welcome(m):
         bot.reply_to(m, 'Este comando es exclusivo de otro grupo')
         return
 
-@bot.message_handler(commands=['tabla'])
-def command_tabla(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/tabla.jpg', 'rb'))
+#@bot.message_handler(commands=['tabla'])
+#def command_tabla(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/tabla.jpg', 'rb'))
 
-@bot.message_handler(commands=['solus'])
-def command_solus(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/bleh.jpg', 'rb'))
+#@bot.message_handler(commands=['solus'])
+#def command_solus(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/bleh.jpg', 'rb'))
 
-@bot.message_handler(commands=['takataka'])
-def command_taka(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/takataka.jpg', 'rb'))
+#@bot.message_handler(commands=['takataka'])
+#def command_taka(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/takataka.jpg', 'rb'))
 
-@bot.message_handler(commands=['kill'])
-def command_kill(m):
-    cid = m.chat.id
-    list = str(m.text).split(None,1)
-    killed = str(list[1])
-    bot.send_message( cid, "Muere {0}!!!".format(killed))
-    bot.send_photo( cid, open( './imagenes/rambo.jpg', 'rb'))
+#@bot.message_handler(commands=['kill'])
+#def command_kill(m):
+#    cid = m.chat.id
+#    list = str(m.text).split(None,1)
+#    killed = str(list[1])
+#    bot.send_message( cid, "Muere {0}!!!".format(killed))
+#    bot.send_photo( cid, open( './imagenes/rambo.jpg', 'rb'))
 
 #@bot.message_handler(commands=['format'])
 #def command_format(m):
@@ -412,25 +412,25 @@ def command_kill(m):
 #    except Exception:
 #        bot.send_message( cid, "Invalid Argument")
 
-@bot.message_handler(commands=['maestruli'])
-def command_maestruli(m):
-    cid = m.chat.id
-    bot.send_document( cid, open( './imagenes/maestruli.mp4', 'rb'))
+#@bot.message_handler(commands=['maestruli'])
+#def command_maestruli(m):
+#    cid = m.chat.id
+#    bot.send_document( cid, open( './imagenes/maestruli.mp4', 'rb'))
 
 #@bot.message_handler(commands=['fuckyou'])
 #def command_fuckyou(m):
 #    cid = m.chat.id
 #    bot.send_document( cid, open( './imagenes/fuckyou.mp4', 'rb'))
 
-@bot.message_handler(commands=['arch'])
-def command_arch(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/arch.jpg', 'rb'))
+#@bot.message_handler(commands=['arch'])
+#def command_arch(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/arch.jpg', 'rb'))
 
-@bot.message_handler(commands=['love'])
-def command_love(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/love.jpg', 'rb'))
+#@bot.message_handler(commands=['love'])
+#def command_love(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/love.jpg', 'rb'))
 
 @bot.message_handler(commands=['feed'])
 def command_feed(m):
@@ -462,10 +462,10 @@ def command_help(message):
     markup.row(itembtnrepo)
     bot.send_message(message.chat.id, "Choose an option:", reply_markup=markup)
 
-@bot.message_handler(commands=['deal'])
-def command_deal(m):
-    cid = m.chat.id
-    bot.send_document( cid, open( './imagenes/deal.mp4', 'rb'))
+#@bot.message_handler(commands=['deal'])
+#def command_deal(m):
+#    cid = m.chat.id
+#    bot.send_document( cid, open( './imagenes/deal.mp4', 'rb'))
     
 # @bot.message_handler(commands=['blog'])
 # def command_blog(m):
@@ -501,15 +501,15 @@ def command_dev(m):
     cid = m.chat.id
     bot.send_document( cid, open( './imagenes/soyprogramador.mp4', 'rb'))
     
-@bot.message_handler(commands=['windowseros'])
-def command_windowseros(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/nohaywindowseros.jpg', 'rb'))
+#@bot.message_handler(commands=['windowseros'])
+#def command_windowseros(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/nohaywindowseros.jpg', 'rb'))
 
-@bot.message_handler(commands=['friends'])
-def command_friends(m):
-    cid = m.chat.id
-    bot.send_photo( cid, open( './imagenes/friends.jpg', 'rb'))
+#@bot.message_handler(commands=['friends'])
+#def command_friends(m):
+#    cid = m.chat.id
+#    bot.send_photo( cid, open( './imagenes/friends.jpg', 'rb'))
 
 #@bot.message_handler(commands=['apache'])
 #def command_apache(m):
